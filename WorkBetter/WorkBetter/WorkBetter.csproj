@@ -90,6 +90,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Login\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -182,6 +186,9 @@
     <Compile Include="Data\ThanhToanHoaDon.cs">
       <DependentUpon>AvnDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Login\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -242,6 +249,9 @@
       <DependentUpon>AvnDataModel.edmx</DependentUpon>
       <LastGenOutput>AvnDataModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\Bg.png" />
+    <Resource Include="Images\Icon.ico" />
+    <Resource Include="Images\logo.png" />
     <Resource Include="Resources\Entypo-license.txt" />
     <Resource Include="Resources\WindowsIcons-license.txt" />
   </ItemGroup>

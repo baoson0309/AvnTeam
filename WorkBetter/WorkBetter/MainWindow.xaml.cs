@@ -18,11 +18,23 @@ namespace WorkBetter
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {
             InitializeComponent();
+            this.ShowLogin();
+        }
+
+        /// <summary>
+        /// Show a login dialog
+        /// </summary>
+        private void ShowLogin()
+        {
+            Login.LoginView lg = new Login.LoginView();
+            Panel.SetZIndex(lg, 999);
+            Grid.SetRowSpan(lg, 2);
+            this.LayoutRoot.Children.Add(lg);
         }
     }
 }
