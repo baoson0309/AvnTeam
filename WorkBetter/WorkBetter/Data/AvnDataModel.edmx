@@ -1226,6 +1226,8 @@
           <NavigationProperty Name="TaskLists" Relationship="Self.FK_TaskList_NhanVien" FromRole="NhanViens" ToRole="TaskLists" />
           <NavigationProperty Name="ThanhLyHopDongs" Relationship="Self.FK_ThanhLyHopDong_NhanVien" FromRole="NhanViens" ToRole="ThanhLyHopDongs" />
           <NavigationProperty Name="ThanhToanHoaDons" Relationship="Self.FK_ThanhToanHoaDonNhanVien" FromRole="NhanViens" ToRole="ThanhToanHoaDons" />
+          <Property Name="ChucVu" Type="String" Nullable="false" />
+          <Property Name="Skype" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="NhanXet">
           <Key>

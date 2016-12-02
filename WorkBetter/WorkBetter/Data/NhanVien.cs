@@ -50,6 +50,8 @@ namespace WorkBetter.Data
         public Nullable<System.DateTime> NgaySinh { get; set; }
         public string DiaChi { get; set; }
         public string PhanQuyen { get; set; }
+        public string ChucVu { get; set; }
+        public string Skype { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiPhiDuAn> ChiPhiDuAns { get; set; }

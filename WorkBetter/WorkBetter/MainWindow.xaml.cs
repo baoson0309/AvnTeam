@@ -36,5 +36,24 @@ namespace WorkBetter
             Grid.SetRowSpan(lg, 2);
             this.LayoutRoot.Children.Add(lg);
         }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DanhMucNhanVienMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Staff.NhanVienView nvView = new Staff.NhanVienView();
+            Panel.SetZIndex(nvView, 999);
+            Grid.SetRow(nvView, 1);
+            this.LayoutRoot.Children.Add(nvView);
+            nvView.IsVisibleChanged += (ss, ee) => 
+            {
+                nvView = null;
+                GC.Collect();
+            };
+        }
     }
 }

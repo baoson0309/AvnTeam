@@ -1,0 +1,141 @@
+﻿<UserControl x:Class="WorkBetter.Staff.ThemNhanVienDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WorkBetter.Staff"
+             xmlns:wpf="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d">
+    <wpf:Card x:Name="ThemNhanVienCard"
+              VerticalAlignment="Center"
+              Height="280"
+              HorizontalAlignment="Center">
+        <Grid>
+            <TabControl>
+                <TabItem Header="Thông tin cơ bản" controls:ControlsHelper.HeaderFontSize="14">
+                    <Grid Margin="20, 0, 20, 10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="10"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Tên nhân viên:" VerticalAlignment="Center"></TextBlock>
+                        <TextBox x:Name="TenNhanVienTextBox" Grid.Column="2" VerticalAlignment="Center"></TextBox>
+
+                        <TextBlock Text="Email:" Grid.Row="1" VerticalAlignment="Center"></TextBlock>
+                        <TextBox x:Name="EmailTextBox" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center"></TextBox>
+
+                        <TextBlock Text="Số điện thoại:" Grid.Row="2" VerticalAlignment="Center"></TextBlock>
+                        <TextBox x:Name="SoDienThoaiTextBox" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center"></TextBox>
+
+                        <TextBlock Text="Skype:" Grid.Row="3" VerticalAlignment="Center"></TextBlock>
+                        <TextBox x:Name="SkypeTextBox" Grid.Column="2" Grid.Row="3" VerticalAlignment="Center"></TextBox>
+
+                        <TextBlock Text="Tên đăng nhập:" Grid.Row="4" VerticalAlignment="Center"></TextBlock>
+                        <TextBox x:Name="TenDangNhapTextBox" Grid.Column="2" Grid.Row="4" VerticalAlignment="Center"></TextBox>
+
+                        <TextBlock Text="Ngày sinh:" Grid.Row="5" VerticalAlignment="Center"></TextBlock>
+                        <DatePicker x:Name="NgaySinhDatePicker" Grid.Column="2" Margin="0, 5, 0, 0" Grid.Row="5" Grid.RowSpan="1"></DatePicker>
+
+                        <TextBlock Text="Địa chỉ:" Grid.Row="6" VerticalAlignment="Center"></TextBlock>
+                        <TextBox x:Name="DiaChiTextBox" Grid.Column="2" Grid.Row="6" VerticalAlignment="Center"></TextBox>
+
+                        <DockPanel Grid.Row="7" Grid.ColumnSpan="3">
+                            <Button x:Name="ThemNhanVienCancelButton"  
+                                            Margin="15, 5, 0, 5"
+                                            Style="{DynamicResource MaterialDesignRaisedAccentButton}"
+                                            HorizontalAlignment="Right"
+                                            DockPanel.Dock="Right"
+                                            Content="Hủy bỏ" Click="ThemNhanVienCancelButton_Click"/>
+                            <Button x:Name="ThemNhanVienButton"   
+                                            HorizontalAlignment="Right"
+                                            DockPanel.Dock="Right"
+                                            Margin="0, 5, 0, 5"  
+                                            Grid.Column="2" 
+                                            Content="+ Thêm nhân viên"/>
+                        </DockPanel>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Phân quyền cơ bản" controls:ControlsHelper.HeaderFontSize="14">
+                    <Grid Margin="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="10"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center">Người dùng này có thể thêm khách hàng mới:</TextBlock>
+                        <ToggleButton x:Name="ThemKhachHangPermission" Grid.Column="3" Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Center"/>
+
+                        <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">Người dùng này có thể thêm hợp đồng mới:</TextBlock>
+                        <ToggleButton x:Name="ThemHopDongPermission" Grid.Row="1" Grid.Column="3" Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Center"
+                          ToolTip="Người dùng sẽ được tiếp cận những thông tin cơ bản trong danh sách khách hàng. Bao gồm: Tên khách hàng"/>
+
+                        <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">Người dùng này có thể tạo dự án mới:</TextBlock>
+                        <ToggleButton x:Name="TaoDuAnPermission" Grid.Row="2" Grid.Column="3" Style="{StaticResource MaterialDesignSwitchToggleButton}" IsChecked="True" VerticalAlignment="Center"
+                          ToolTip="Người dùng sẽ được tiếp cận những thông tin cơ bản trong danh sách hợp đồng. Bao gồm: Số hợp đồng, nội dung hợp đồng."/>
+
+                        <TextBlock Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">Xem danh sách nhân viên:</TextBlock>
+                        <ToggleButton x:Name="XemDanhSachNhanVienPermission" IsChecked="True" Grid.Row="3" Grid.Column="3" Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Center"
+                          ToolTip="Người dùng sẽ được tiếp cận những thông tin cơ bản trong danh sách nhân viên. Bao gồm: Tên nhân viên, số điện thoại, email"/>
+
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Phân quyền nâng cao" controls:ControlsHelper.HeaderFontSize="14">
+                    <Grid Margin="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="10"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center">Người dùng này là quản trị viên:</TextBlock>
+                        <ToggleButton x:Name="QuanTriVienPermission" Grid.Column="3" Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Center"/>
+
+                        <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">Người dùng này có thể xem thông tin khách hàng:</TextBlock>
+                        <ToggleButton x:Name="XemKhachHangPermission" Grid.Row="1" Grid.Column="3" Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Center"
+                          ToolTip="Người dùng sẽ được tiếp cận những thông tin về khách hàng, bao gồm danh sách liên hệ."/>
+
+                        <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">Người dùng này có thể xem thông tin các hợp đồng:</TextBlock>
+                        <ToggleButton x:Name="XemHopDongPermission" Grid.Row="2" Grid.Column="3" Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Center"
+                          ToolTip="Bao gồm tất cả các thông tin của tất cả các hợp đồng, các dự án thuộc các hợp đồng."/>
+
+                        <TextBlock Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">Người dùng này có thể quản lý nhân viên</TextBlock>
+                        <ToggleButton x:Name="TaoTaiKhoanPermission" Grid.Row="3" Grid.Column="3" Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Center"
+                          ToolTip="Người dùng có thể tạo tài khoản cho nhân viên mới, hủy bỏ tài khoản của nhân viên cũ."/>
+
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </wpf:Card>
+</UserControl>

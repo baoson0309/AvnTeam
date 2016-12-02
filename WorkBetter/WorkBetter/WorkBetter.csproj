@@ -90,6 +90,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CommonFunctions\Converters.cs" />
+    <Compile Include="Staff\NhanVienCard.xaml.cs">
+      <DependentUpon>NhanVienCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\NhanVienView.xaml.cs">
+      <DependentUpon>NhanVienView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\ThemNhanVienDialog.xaml.cs">
+      <DependentUpon>ThemNhanVienDialog.xaml</DependentUpon>
+    </Compile>
     <Page Include="Login\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -200,6 +210,18 @@
     <Page Include="Resources\IconsNonShared.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Staff\NhanVienCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Staff\NhanVienView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Staff\ThemNhanVienDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
