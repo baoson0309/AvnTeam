@@ -30,6 +30,7 @@ namespace WorkBetter.Data
         public int Id { get; set; }
         public string MaDuAn { get; set; }
         public string TenDuAn { get; set; }
+        public string MoTa { get; set; }
         public int HopDongId { get; set; }
         public int DanhMucDuAnId { get; set; }
         public System.DateTime ThoiGianTao { get; set; }

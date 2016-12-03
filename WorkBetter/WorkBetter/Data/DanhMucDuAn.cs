@@ -21,7 +21,6 @@ namespace WorkBetter.Data
         }
     
         public int Id { get; set; }
-        public string MaDanhMuc { get; set; }
         public string TenDanhMuc { get; set; }
         public string GhiChu { get; set; }
     

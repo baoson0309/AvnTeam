@@ -7,9 +7,17 @@
              xmlns:wpf="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d">
+    <UserControl.Resources>
+        <local:PhanQuyenToBoolConverter x:Key="PhanQuyenToBoolConverter"/>
+    </UserControl.Resources>
+    <UserControl.CommandBindings>
+        <CommandBinding Command="{x:Static local:ThemNhanVienDialog.ThemNhanVienCommand}" CanExecute="ThemNhanVienCommand_CanExecute" Executed="ThemNhanVienCommand_Executed"></CommandBinding>
+    </UserControl.CommandBindings>
+    
     <wpf:Card x:Name="ThemNhanVienCard"
+              Padding="10"
               VerticalAlignment="Center"
-              Height="280"
+              Height="330"
               HorizontalAlignment="Center">
         <Grid>
             <TabControl>
@@ -21,21 +29,22 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="28"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
 
                         <TextBlock Text="Tên nhân viên:" VerticalAlignment="Center"></TextBlock>
-                        <TextBox x:Name="TenNhanVienTextBox" Grid.Column="2" VerticalAlignment="Center"></TextBox>
+                        <TextBox x:Name="TenNhanVienTextBox" Grid.Column="2" VerticalAlignment="Center"/>
 
                         <TextBlock Text="Email:" Grid.Row="1" VerticalAlignment="Center"></TextBlock>
-                        <TextBox x:Name="EmailTextBox" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center"></TextBox>
+                        <TextBox x:Name="EmailTextBox" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center"/>
 
                         <TextBlock Text="Số điện thoại:" Grid.Row="2" VerticalAlignment="Center"></TextBlock>
                         <TextBox x:Name="SoDienThoaiTextBox" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center"></TextBox>
@@ -49,10 +58,17 @@
                         <TextBlock Text="Ngày sinh:" Grid.Row="5" VerticalAlignment="Center"></TextBlock>
                         <DatePicker x:Name="NgaySinhDatePicker" Grid.Column="2" Margin="0, 5, 0, 0" Grid.Row="5" Grid.RowSpan="1"></DatePicker>
 
-                        <TextBlock Text="Địa chỉ:" Grid.Row="6" VerticalAlignment="Center"></TextBlock>
-                        <TextBox x:Name="DiaChiTextBox" Grid.Column="2" Grid.Row="6" VerticalAlignment="Center"></TextBox>
+                        <TextBlock Text="Chức vụ:" Grid.Row="6" VerticalAlignment="Center"></TextBlock>
+                        <TextBox x:Name="ChucVuTextBox" Grid.Column="2" Grid.Row="6" VerticalAlignment="Center"></TextBox>
 
-                        <DockPanel Grid.Row="7" Grid.ColumnSpan="3">
+                        <TextBlock Text="" x:Name="MessageTextBox" Grid.Row="7" 
+                                   Margin="10,5"
+                                   FontStyle="Italic"
+                                   Foreground="{DynamicResource SecondaryAccentBrush}"
+                                   Grid.ColumnSpan="3"
+                                   VerticalAlignment="Center"></TextBlock>
+
+                        <DockPanel Grid.Row="8" Grid.ColumnSpan="3">
                             <Button x:Name="ThemNhanVienCancelButton"  
                                             Margin="15, 5, 0, 5"
                                             Style="{DynamicResource MaterialDesignRaisedAccentButton}"
@@ -60,6 +76,7 @@
                                             DockPanel.Dock="Right"
                                             Content="Hủy bỏ" Click="ThemNhanVienCancelButton_Click"/>
                             <Button x:Name="ThemNhanVienButton"   
+                                    Command="{x:Static local:ThemNhanVienDialog.ThemNhanVienCommand}"
                                             HorizontalAlignment="Right"
                                             DockPanel.Dock="Right"
                                             Margin="0, 5, 0, 5"  
@@ -86,18 +103,28 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Column="1" VerticalAlignment="Center">Người dùng này có thể thêm khách hàng mới:</TextBlock>
-                        <ToggleButton x:Name="ThemKhachHangPermission" Grid.Column="3" Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Center"/>
+                        <ToggleButton x:Name="ThemKhachHangPermission" 
+                                      Tag="1"
+                                      Grid.Column="3" Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Center" IsChecked="{Binding PhanQuyen, Converter={StaticResource PhanQuyenToBoolConverter}, ConverterParameter=1, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ThemNhanVienDialog}}}"/>
 
                         <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">Người dùng này có thể thêm hợp đồng mới:</TextBlock>
-                        <ToggleButton x:Name="ThemHopDongPermission" Grid.Row="1" Grid.Column="3" Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Center"
+                        <ToggleButton x:Name="ThemHopDongPermission" 
+                                      Tag="2"
+                                      IsChecked="{Binding PhanQuyen, Converter={StaticResource PhanQuyenToBoolConverter}, ConverterParameter=2, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ThemNhanVienDialog}}}"
+                                      Grid.Row="1" Grid.Column="3" Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Center"
                           ToolTip="Người dùng sẽ được tiếp cận những thông tin cơ bản trong danh sách khách hàng. Bao gồm: Tên khách hàng"/>
 
                         <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">Người dùng này có thể tạo dự án mới:</TextBlock>
-                        <ToggleButton x:Name="TaoDuAnPermission" Grid.Row="2" Grid.Column="3" Style="{StaticResource MaterialDesignSwitchToggleButton}" IsChecked="True" VerticalAlignment="Center"
+                        <ToggleButton x:Name="TaoDuAnPermission" 
+                                      IsChecked="{Binding PhanQuyen, Converter={StaticResource PhanQuyenToBoolConverter}, ConverterParameter=3, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ThemNhanVienDialog}}}"
+                                      Grid.Row="2" Grid.Column="3" Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Center"
                           ToolTip="Người dùng sẽ được tiếp cận những thông tin cơ bản trong danh sách hợp đồng. Bao gồm: Số hợp đồng, nội dung hợp đồng."/>
 
                         <TextBlock Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">Xem danh sách nhân viên:</TextBlock>
-                        <ToggleButton x:Name="XemDanhSachNhanVienPermission" IsChecked="True" Grid.Row="3" Grid.Column="3" Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Center"
+                        <ToggleButton x:Name="XemDanhSachNhanVienPermission" 
+                                      Tag="4"
+                                      IsChecked="{Binding PhanQuyen, Converter={StaticResource PhanQuyenToBoolConverter}, ConverterParameter=1, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ThemNhanVienDialog}}}"
+                                      Grid.Row="3" Grid.Column="3" Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Center"
                           ToolTip="Người dùng sẽ được tiếp cận những thông tin cơ bản trong danh sách nhân viên. Bao gồm: Tên nhân viên, số điện thoại, email"/>
 
                     </Grid>

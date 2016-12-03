@@ -16,7 +16,7 @@ namespace WorkBetter.Data
     {
         public int Id { get; set; }
         public string MoTaChiPhi { get; set; }
-        public System.DateTime NgayHoaDon { get; set; }
+        public Nullable<System.DateTime> NgayHoaDon { get; set; }
         public string SoHoaDon { get; set; }
         public string SoTienChuaThue { get; set; }
         public string ThueGTGT { get; set; }

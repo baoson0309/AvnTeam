@@ -4,21 +4,21 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AvnDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AvnDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ChiPhiDuAns">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MoTaChiPhi" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="NgayHoaDon" Type="datetime" Nullable="false" />
-          <Property Name="SoHoaDon" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="MoTaChiPhi" Type="nvarchar(max)" />
+          <Property Name="NgayHoaDon" Type="datetime" />
+          <Property Name="SoHoaDon" Type="nvarchar" MaxLength="15" />
           <Property Name="SoTienChuaThue" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="ThueGTGT" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ThueGTGT" Type="nvarchar(max)" />
           <Property Name="ThoiGianThanhToan" Type="nvarchar(max)" Nullable="false" />
           <Property Name="NguoiThanhToan" Type="int" Nullable="false" />
           <Property Name="TinhTrang" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="GhiChu" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
           <Property Name="DuAnId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="DanhMucDuAns">
@@ -26,9 +26,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MaDanhMuc" Type="nvarchar" MaxLength="16" Nullable="false" />
           <Property Name="TenDanhMuc" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="GhiChu" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="DanhMucHopDongs">
           <Key>
@@ -38,7 +37,7 @@
           <Property Name="TenDanhMuc" Type="nvarchar(max)" Nullable="false" />
           <Property Name="NguoiTao" Type="int" Nullable="false" />
           <Property Name="NgayGioTao" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="MoTa" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
           <Property Name="SoLuongHopDong" Type="int" Nullable="false" />
           <Property Name="DanhMucCha" Type="int" Nullable="false" />
         </EntityType>
@@ -49,6 +48,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MaDuAn" Type="nvarchar" MaxLength="16" Nullable="false" />
           <Property Name="TenDuAn" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="MoTa" Type="nvarchar" MaxLength="500" />
           <Property Name="HopDongId" Type="int" Nullable="false" />
           <Property Name="DanhMucDuAnId" Type="int" Nullable="false" />
           <Property Name="ThoiGianTao" Type="datetime" Nullable="false" />
@@ -78,7 +78,7 @@
           <Property Name="NgayKy" Type="datetime" Nullable="false" />
           <Property Name="NguoiKyHopDong" Type="int" Nullable="false" />
           <Property Name="NoiDung" Type="nvarchar" MaxLength="500" Nullable="false" />
-          <Property Name="GhiChu" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
           <Property Name="KhachHangId" Type="int" Nullable="false" />
           <Property Name="GiaTriHopDong" Type="float" Nullable="false" />
           <Property Name="DanhMucHopDongId" Type="int" Nullable="false" />
@@ -90,12 +90,12 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MaKhachHang" Type="nvarchar" MaxLength="16" Nullable="false" />
           <Property Name="TenKhachHang" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="GhiChu" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="NhomKhachHangId" Type="int" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" MaxLength="500" Nullable="false" />
-          <Property Name="DienThoai" Type="nvarchar" MaxLength="15" Nullable="false" />
-          <Property Name="Website" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="500" />
+          <Property Name="DienThoai" Type="nvarchar" MaxLength="15" />
+          <Property Name="Website" Type="nvarchar" MaxLength="50" />
           <Property Name="NguoiThem" Type="int" Nullable="false" />
           <Property Name="ThoiGianThem" Type="datetime" Nullable="false" />
         </EntityType>
@@ -120,7 +120,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenNhomLienKet" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="GhiChu" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
           <Property Name="NguoiTao" Type="int" Nullable="false" />
           <Property Name="ThoiGianTao" Type="datetime" Nullable="false" />
           <Property Name="DuAnId" Type="int" Nullable="false" />
@@ -133,7 +133,7 @@
           <Property Name="LienKetListId" Type="int" Nullable="false" />
           <Property Name="Link" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Ten" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="GhiChu" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
           <Property Name="NguoiChiaSe" Type="int" Nullable="false" />
           <Property Name="ThoiGianChiaSe" Type="datetime" Nullable="false" />
         </EntityType>
@@ -165,6 +165,8 @@
           <Property Name="NgaySinh" Type="datetime" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="200" />
           <Property Name="PhanQuyen" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="ChucVu" Type="nvarchar(max)" />
+          <Property Name="Skype" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="NhanXets">
           <Key>
@@ -1000,76 +1002,268 @@
             <End Role="ThanhToanHoaDons" EntitySet="ThanhToanHoaDons" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AvnDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AvnDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ChiPhiDuAns" EntityType="AvnDataModel.ChiPhiDuAn" />
+          <EntitySet Name="DanhMucDuAns" EntityType="AvnDataModel.DanhMucDuAn" />
+          <EntitySet Name="DanhMucHopDongs" EntityType="AvnDataModel.DanhMucHopDong" />
+          <EntitySet Name="DuAns" EntityType="AvnDataModel.DuAn" />
+          <EntitySet Name="HoaDons" EntityType="AvnDataModel.HoaDon" />
+          <EntitySet Name="HopDongs" EntityType="AvnDataModel.HopDong" />
+          <EntitySet Name="KhachHangs" EntityType="AvnDataModel.KhachHang" />
+          <EntitySet Name="LienHeKhachHangs" EntityType="AvnDataModel.LienHeKhachHang" />
+          <EntitySet Name="LienKetLists" EntityType="AvnDataModel.LienKetList" />
+          <EntitySet Name="LienKets" EntityType="AvnDataModel.LienKet" />
+          <EntitySet Name="MocThoiGians" EntityType="AvnDataModel.MocThoiGian" />
+          <EntitySet Name="NhanViens" EntityType="AvnDataModel.NhanVien" />
+          <EntitySet Name="NhanXets" EntityType="AvnDataModel.NhanXet" />
+          <EntitySet Name="NhomKhachHangs" EntityType="AvnDataModel.NhomKhachHang" />
+          <EntitySet Name="PhuLucHopDongs" EntityType="AvnDataModel.PhuLucHopDong" />
+          <EntitySet Name="Reminders" EntityType="AvnDataModel.Reminder" />
+          <EntitySet Name="RuiRoes" EntityType="AvnDataModel.RuiRo" />
+          <EntitySet Name="SoGhiChepLists" EntityType="AvnDataModel.SoGhiChepList" />
+          <EntitySet Name="SoGhiCheps" EntityType="AvnDataModel.SoGhiChep" />
+          <EntitySet Name="TaskLists" EntityType="AvnDataModel.TaskList" />
+          <EntitySet Name="Tasks" EntityType="AvnDataModel.Task" />
+          <EntitySet Name="ThanhLyHopDongs" EntityType="AvnDataModel.ThanhLyHopDong" />
+          <EntitySet Name="ThanhToanHoaDons" EntityType="AvnDataModel.ThanhToanHoaDon" />
+          <AssociationSet Name="FK_ChiPhiDuAnDuAn" Association="AvnDataModel.FK_ChiPhiDuAnDuAn">
+            <End Role="DuAn" EntitySet="DuAns" />
+            <End Role="ChiPhiDuAn" EntitySet="ChiPhiDuAns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChiPhiDuAnNhanVien" Association="AvnDataModel.FK_ChiPhiDuAnNhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="ChiPhiDuAn" EntitySet="ChiPhiDuAns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DuAnDanhMucDuAn" Association="AvnDataModel.FK_DuAnDanhMucDuAn">
+            <End Role="DanhMucDuAn" EntitySet="DanhMucDuAns" />
+            <End Role="DuAn" EntitySet="DuAns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DanhMucHopDongNhanVien" Association="AvnDataModel.FK_DanhMucHopDongNhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="DanhMucHopDong" EntitySet="DanhMucHopDongs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HopDongDanhMucHopDong" Association="AvnDataModel.FK_HopDongDanhMucHopDong">
+            <End Role="DanhMucHopDong" EntitySet="DanhMucHopDongs" />
+            <End Role="HopDong" EntitySet="HopDongs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DuAnNhanVien" Association="AvnDataModel.FK_DuAnNhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="DuAn" EntitySet="DuAns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HopDongDuAn" Association="AvnDataModel.FK_HopDongDuAn">
+            <End Role="HopDong" EntitySet="HopDongs" />
+            <End Role="DuAn" EntitySet="DuAns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LienKetListDuAn" Association="AvnDataModel.FK_LienKetListDuAn">
+            <End Role="DuAn" EntitySet="DuAns" />
+            <End Role="LienKetList" EntitySet="LienKetLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MocThoiGianDuAn" Association="AvnDataModel.FK_MocThoiGianDuAn">
+            <End Role="DuAn" EntitySet="DuAns" />
+            <End Role="MocThoiGian" EntitySet="MocThoiGians" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReminderDuAn" Association="AvnDataModel.FK_ReminderDuAn">
+            <End Role="DuAn" EntitySet="DuAns" />
+            <End Role="Reminder" EntitySet="Reminders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RuiRoDuAn" Association="AvnDataModel.FK_RuiRoDuAn">
+            <End Role="DuAn" EntitySet="DuAns" />
+            <End Role="RuiRo" EntitySet="RuiRoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskList_DuAn" Association="AvnDataModel.FK_TaskList_DuAn">
+            <End Role="DuAn" EntitySet="DuAns" />
+            <End Role="TaskList" EntitySet="TaskLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThanhToanDuAn" Association="AvnDataModel.FK_ThanhToanDuAn">
+            <End Role="DuAn" EntitySet="DuAns" />
+            <End Role="HoaDon" EntitySet="HoaDons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThanhToanHoaDonDuAn" Association="AvnDataModel.FK_ThanhToanHoaDonDuAn">
+            <End Role="DuAn" EntitySet="DuAns" />
+            <End Role="ThanhToanHoaDon" EntitySet="ThanhToanHoaDons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HoaDonNhanVien" Association="AvnDataModel.FK_HoaDonNhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="HoaDon" EntitySet="HoaDons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThanhToanHoaDonHoaDon" Association="AvnDataModel.FK_ThanhToanHoaDonHoaDon">
+            <End Role="HoaDon" EntitySet="HoaDons" />
+            <End Role="ThanhToanHoaDon" EntitySet="ThanhToanHoaDons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HopDong_KhachHang" Association="AvnDataModel.FK_HopDong_KhachHang">
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+            <End Role="HopDong" EntitySet="HopDongs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HopDongThanhLyHopDong" Association="AvnDataModel.FK_HopDongThanhLyHopDong">
+            <End Role="HopDong" EntitySet="HopDongs" />
+            <End Role="ThanhLyHopDong" EntitySet="ThanhLyHopDongs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NguoiKyHopDong" Association="AvnDataModel.FK_NguoiKyHopDong">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="HopDong" EntitySet="HopDongs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhuLucHopDong_HopDong" Association="AvnDataModel.FK_PhuLucHopDong_HopDong">
+            <End Role="HopDong" EntitySet="HopDongs" />
+            <End Role="PhuLucHopDong" EntitySet="PhuLucHopDongs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KhachHangNhanVien" Association="AvnDataModel.FK_KhachHangNhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LienHeKhachHangKhachHang" Association="AvnDataModel.FK_LienHeKhachHangKhachHang">
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+            <End Role="LienHeKhachHang" EntitySet="LienHeKhachHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NhomKhachHang_KhachHang" Association="AvnDataModel.FK_NhomKhachHang_KhachHang">
+            <End Role="NhomKhachHang" EntitySet="NhomKhachHangs" />
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LienHeKhachHangNhanVien" Association="AvnDataModel.FK_LienHeKhachHangNhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="LienHeKhachHang" EntitySet="LienHeKhachHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LienKetLienKetList" Association="AvnDataModel.FK_LienKetLienKetList">
+            <End Role="LienKetList" EntitySet="LienKetLists" />
+            <End Role="LienKet" EntitySet="LienKets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LienKetListNhanVien" Association="AvnDataModel.FK_LienKetListNhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="LienKetList" EntitySet="LienKetLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LienKetNhanVien" Association="AvnDataModel.FK_LienKetNhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="LienKet" EntitySet="LienKets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MocThoiGian_NguoiChiuTrachNhiem" Association="AvnDataModel.FK_MocThoiGian_NguoiChiuTrachNhiem">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="MocThoiGian" EntitySet="MocThoiGians" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MocThoiGian_NhanVien" Association="AvnDataModel.FK_MocThoiGian_NhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="MocThoiGian" EntitySet="MocThoiGians" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NhanXetNhanVien" Association="AvnDataModel.FK_NhanXetNhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="NhanXet" EntitySet="NhanXets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NhomKhachHangNhanVien" Association="AvnDataModel.FK_NhomKhachHangNhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="NhomKhachHang" EntitySet="NhomKhachHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhuLucHopDong_NhanVien" Association="AvnDataModel.FK_PhuLucHopDong_NhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="PhuLucHopDong" EntitySet="PhuLucHopDongs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReminderNhanVien" Association="AvnDataModel.FK_ReminderNhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="Reminder" EntitySet="Reminders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RuiRoNhanVien" Association="AvnDataModel.FK_RuiRoNhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="RuiRo" EntitySet="RuiRoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SoGhiChepListNhanVien" Association="AvnDataModel.FK_SoGhiChepListNhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="SoGhiChepList" EntitySet="SoGhiChepLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SoGhiChepNhanVien" Association="AvnDataModel.FK_SoGhiChepNhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="SoGhiChep" EntitySet="SoGhiCheps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_NhanVien" Association="AvnDataModel.FK_Task_NhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="Task" EntitySet="Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskList_NhanVien" Association="AvnDataModel.FK_TaskList_NhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="TaskList" EntitySet="TaskLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThanhLyHopDong_NhanVien" Association="AvnDataModel.FK_ThanhLyHopDong_NhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="ThanhLyHopDong" EntitySet="ThanhLyHopDongs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThanhToanHoaDonNhanVien" Association="AvnDataModel.FK_ThanhToanHoaDonNhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="ThanhToanHoaDon" EntitySet="ThanhToanHoaDons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SoGhiChepSoGhiChepList" Association="AvnDataModel.FK_SoGhiChepSoGhiChepList">
+            <End Role="SoGhiChepList" EntitySet="SoGhiChepLists" />
+            <End Role="SoGhiChep" EntitySet="SoGhiCheps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_TaskList" Association="AvnDataModel.FK_Task_TaskList">
+            <End Role="TaskList" EntitySet="TaskLists" />
+            <End Role="Task" EntitySet="Tasks" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="ChiPhiDuAn">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MoTaChiPhi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NgayHoaDon" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="SoHoaDon" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="SoTienChuaThue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ThueGTGT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ThoiGianThanhToan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MoTaChiPhi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NgayHoaDon" Type="DateTime" Precision="3" />
+          <Property Name="SoHoaDon" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SoTienChuaThue" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThueGTGT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThoiGianThanhToan" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NguoiThanhToan" Type="Int32" Nullable="false" />
-          <Property Name="TinhTrang" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TinhTrang" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DuAnId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DuAn" Relationship="Self.FK_ChiPhiDuAnDuAn" FromRole="ChiPhiDuAns" ToRole="DuAns" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_ChiPhiDuAnNhanVien" FromRole="ChiPhiDuAns" ToRole="NhanViens" />
+          <NavigationProperty Name="DuAn" Relationship="AvnDataModel.FK_ChiPhiDuAnDuAn" FromRole="ChiPhiDuAn" ToRole="DuAn" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_ChiPhiDuAnNhanVien" FromRole="ChiPhiDuAn" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="DanhMucDuAn">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MaDanhMuc" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TenDanhMuc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="DuAns" Relationship="Self.FK_DuAnDanhMucDuAn" FromRole="DanhMucDuAns" ToRole="DuAns" />
+          <Property Name="TenDanhMuc" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DuAns" Relationship="AvnDataModel.FK_DuAnDanhMucDuAn" FromRole="DanhMucDuAn" ToRole="DuAn" />
         </EntityType>
         <EntityType Name="DanhMucHopDong">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenDanhMuc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenDanhMuc" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NguoiTao" Type="Int32" Nullable="false" />
-          <Property Name="NgayGioTao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NgayGioTao" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SoLuongHopDong" Type="Int32" Nullable="false" />
           <Property Name="DanhMucCha" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_DanhMucHopDongNhanVien" FromRole="DanhMucHopDongs" ToRole="NhanViens" />
-          <NavigationProperty Name="HopDongs" Relationship="Self.FK_HopDongDanhMucHopDong" FromRole="DanhMucHopDongs" ToRole="HopDongs" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_DanhMucHopDongNhanVien" FromRole="DanhMucHopDong" ToRole="NhanVien" />
+          <NavigationProperty Name="HopDongs" Relationship="AvnDataModel.FK_HopDongDanhMucHopDong" FromRole="DanhMucHopDong" ToRole="HopDong" />
         </EntityType>
         <EntityType Name="DuAn">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MaDuAn" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TenDuAn" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaDuAn" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="TenDuAn" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="HopDongId" Type="Int32" Nullable="false" />
           <Property Name="DanhMucDuAnId" Type="Int32" Nullable="false" />
           <Property Name="ThoiGianTao" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="NguoiTao" Type="Int32" Nullable="false" />
-          <Property Name="NhanVienList" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="ChiPhiDuAns" Relationship="Self.FK_ChiPhiDuAnDuAn" FromRole="DuAns" ToRole="ChiPhiDuAns" />
-          <NavigationProperty Name="DanhMucDuAn" Relationship="Self.FK_DuAnDanhMucDuAn" FromRole="DuAns" ToRole="DanhMucDuAns" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_DuAnNhanVien" FromRole="DuAns" ToRole="NhanViens" />
-          <NavigationProperty Name="HopDong" Relationship="Self.FK_HopDongDuAn" FromRole="DuAns" ToRole="HopDongs" />
-          <NavigationProperty Name="LienKetLists" Relationship="Self.FK_LienKetListDuAn" FromRole="DuAns" ToRole="LienKetLists" />
-          <NavigationProperty Name="MocThoiGians" Relationship="Self.FK_MocThoiGianDuAn" FromRole="DuAns" ToRole="MocThoiGians" />
-          <NavigationProperty Name="Reminders" Relationship="Self.FK_ReminderDuAn" FromRole="DuAns" ToRole="Reminders" />
-          <NavigationProperty Name="RuiRoes" Relationship="Self.FK_RuiRoDuAn" FromRole="DuAns" ToRole="RuiRoes" />
-          <NavigationProperty Name="TaskLists" Relationship="Self.FK_TaskList_DuAn" FromRole="DuAns" ToRole="TaskLists" />
-          <NavigationProperty Name="HoaDons" Relationship="Self.FK_ThanhToanDuAn" FromRole="DuAns" ToRole="HoaDons" />
-          <NavigationProperty Name="ThanhToanHoaDons" Relationship="Self.FK_ThanhToanHoaDonDuAn" FromRole="DuAns" ToRole="ThanhToanHoaDons" />
+          <Property Name="NhanVienList" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ChiPhiDuAns" Relationship="AvnDataModel.FK_ChiPhiDuAnDuAn" FromRole="DuAn" ToRole="ChiPhiDuAn" />
+          <NavigationProperty Name="DanhMucDuAn" Relationship="AvnDataModel.FK_DuAnDanhMucDuAn" FromRole="DuAn" ToRole="DanhMucDuAn" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_DuAnNhanVien" FromRole="DuAn" ToRole="NhanVien" />
+          <NavigationProperty Name="HopDong" Relationship="AvnDataModel.FK_HopDongDuAn" FromRole="DuAn" ToRole="HopDong" />
+          <NavigationProperty Name="LienKetLists" Relationship="AvnDataModel.FK_LienKetListDuAn" FromRole="DuAn" ToRole="LienKetList" />
+          <NavigationProperty Name="MocThoiGians" Relationship="AvnDataModel.FK_MocThoiGianDuAn" FromRole="DuAn" ToRole="MocThoiGian" />
+          <NavigationProperty Name="Reminders" Relationship="AvnDataModel.FK_ReminderDuAn" FromRole="DuAn" ToRole="Reminder" />
+          <NavigationProperty Name="RuiRoes" Relationship="AvnDataModel.FK_RuiRoDuAn" FromRole="DuAn" ToRole="RuiRo" />
+          <NavigationProperty Name="TaskLists" Relationship="AvnDataModel.FK_TaskList_DuAn" FromRole="DuAn" ToRole="TaskList" />
+          <NavigationProperty Name="HoaDons" Relationship="AvnDataModel.FK_ThanhToanDuAn" FromRole="DuAn" ToRole="HoaDon" />
+          <NavigationProperty Name="ThanhToanHoaDons" Relationship="AvnDataModel.FK_ThanhToanHoaDonDuAn" FromRole="DuAn" ToRole="ThanhToanHoaDon" />
         </EntityType>
         <EntityType Name="HoaDon">
           <Key>
@@ -1079,54 +1273,54 @@
           <Property Name="DuAnId" Type="Int32" Nullable="false" />
           <Property Name="SoHoaDon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NgayHoaDon" Type="DateTime" Precision="3" />
-          <Property Name="SoTienChuaThue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ThueGTGT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SoTienChuaThue" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThueGTGT" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NguoiLapHoaDon" Type="Int32" Nullable="false" />
           <Property Name="ThoiGianLapHoaDon" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="TinhTrangHoaDon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="DuAn" Relationship="Self.FK_ThanhToanDuAn" FromRole="HoaDons" ToRole="DuAns" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_HoaDonNhanVien" FromRole="HoaDons" ToRole="NhanViens" />
-          <NavigationProperty Name="ThanhToanHoaDons" Relationship="Self.FK_ThanhToanHoaDonHoaDon" FromRole="HoaDons" ToRole="ThanhToanHoaDons" />
+          <Property Name="TinhTrangHoaDon" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DuAn" Relationship="AvnDataModel.FK_ThanhToanDuAn" FromRole="HoaDon" ToRole="DuAn" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_HoaDonNhanVien" FromRole="HoaDon" ToRole="NhanVien" />
+          <NavigationProperty Name="ThanhToanHoaDons" Relationship="AvnDataModel.FK_ThanhToanHoaDonHoaDon" FromRole="HoaDon" ToRole="ThanhToanHoaDon" />
         </EntityType>
         <EntityType Name="HopDong">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SoHopDong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SoHopDong" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NgayKy" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="NguoiKyHopDong" Type="Int32" Nullable="false" />
-          <Property Name="NoiDung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NoiDung" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="KhachHangId" Type="Int32" Nullable="false" />
           <Property Name="GiaTriHopDong" Type="Double" Nullable="false" />
           <Property Name="DanhMucHopDongId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DanhMucHopDong" Relationship="Self.FK_HopDongDanhMucHopDong" FromRole="HopDongs" ToRole="DanhMucHopDongs" />
-          <NavigationProperty Name="DuAns" Relationship="Self.FK_HopDongDuAn" FromRole="HopDongs" ToRole="DuAns" />
-          <NavigationProperty Name="KhachHang" Relationship="Self.FK_HopDong_KhachHang" FromRole="HopDongs" ToRole="KhachHangs" />
-          <NavigationProperty Name="ThanhLyHopDongs" Relationship="Self.FK_HopDongThanhLyHopDong" FromRole="HopDongs" ToRole="ThanhLyHopDongs" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_NguoiKyHopDong" FromRole="HopDongs" ToRole="NhanViens" />
-          <NavigationProperty Name="PhuLucHopDongs" Relationship="Self.FK_PhuLucHopDong_HopDong" FromRole="HopDongs" ToRole="PhuLucHopDongs" />
+          <NavigationProperty Name="DanhMucHopDong" Relationship="AvnDataModel.FK_HopDongDanhMucHopDong" FromRole="HopDong" ToRole="DanhMucHopDong" />
+          <NavigationProperty Name="DuAns" Relationship="AvnDataModel.FK_HopDongDuAn" FromRole="HopDong" ToRole="DuAn" />
+          <NavigationProperty Name="KhachHang" Relationship="AvnDataModel.FK_HopDong_KhachHang" FromRole="HopDong" ToRole="KhachHang" />
+          <NavigationProperty Name="ThanhLyHopDongs" Relationship="AvnDataModel.FK_HopDongThanhLyHopDong" FromRole="HopDong" ToRole="ThanhLyHopDong" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_NguoiKyHopDong" FromRole="HopDong" ToRole="NhanVien" />
+          <NavigationProperty Name="PhuLucHopDongs" Relationship="AvnDataModel.FK_PhuLucHopDong_HopDong" FromRole="HopDong" ToRole="PhuLucHopDong" />
         </EntityType>
         <EntityType Name="KhachHang">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MaKhachHang" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TenKhachHang" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DiaChi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaKhachHang" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="TenKhachHang" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="NhomKhachHangId" Type="Int32" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DienThoai" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DienThoai" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NguoiThem" Type="Int32" Nullable="false" />
           <Property Name="ThoiGianThem" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="HopDongs" Relationship="Self.FK_HopDong_KhachHang" FromRole="KhachHangs" ToRole="HopDongs" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_KhachHangNhanVien" FromRole="KhachHangs" ToRole="NhanViens" />
-          <NavigationProperty Name="LienHeKhachHangs" Relationship="Self.FK_LienHeKhachHangKhachHang" FromRole="KhachHangs" ToRole="LienHeKhachHangs" />
-          <NavigationProperty Name="NhomKhachHang" Relationship="Self.FK_NhomKhachHang_KhachHang" FromRole="KhachHangs" ToRole="NhomKhachHangs" />
+          <NavigationProperty Name="HopDongs" Relationship="AvnDataModel.FK_HopDong_KhachHang" FromRole="KhachHang" ToRole="HopDong" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_KhachHangNhanVien" FromRole="KhachHang" ToRole="NhanVien" />
+          <NavigationProperty Name="LienHeKhachHangs" Relationship="AvnDataModel.FK_LienHeKhachHangKhachHang" FromRole="KhachHang" ToRole="LienHeKhachHang" />
+          <NavigationProperty Name="NhomKhachHang" Relationship="AvnDataModel.FK_NhomKhachHang_KhachHang" FromRole="KhachHang" ToRole="NhomKhachHang" />
         </EntityType>
         <EntityType Name="LienHeKhachHang">
           <Key>
@@ -1134,30 +1328,30 @@
             <PropertyRef Name="HoVaTen" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="HoVaTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HoVaTen" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SoDienThoai" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
           <Property Name="DiaChi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="KhachHangId" Type="Int32" Nullable="false" />
           <Property Name="NguoiThem" Type="Int32" Nullable="false" />
-          <Property Name="ThoiGianThem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="KhachHang" Relationship="Self.FK_LienHeKhachHangKhachHang" FromRole="LienHeKhachHangs" ToRole="KhachHangs" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_LienHeKhachHangNhanVien" FromRole="LienHeKhachHangs" ToRole="NhanViens" />
+          <Property Name="ThoiGianThem" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KhachHang" Relationship="AvnDataModel.FK_LienHeKhachHangKhachHang" FromRole="LienHeKhachHang" ToRole="KhachHang" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_LienHeKhachHangNhanVien" FromRole="LienHeKhachHang" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="LienKetList">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenNhomLienKet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenNhomLienKet" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NguoiTao" Type="Int32" Nullable="false" />
           <Property Name="ThoiGianTao" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="DuAnId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DuAn" Relationship="Self.FK_LienKetListDuAn" FromRole="LienKetLists" ToRole="DuAns" />
-          <NavigationProperty Name="LienKets" Relationship="Self.FK_LienKetLienKetList" FromRole="LienKetLists" ToRole="LienKets" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_LienKetListNhanVien" FromRole="LienKetLists" ToRole="NhanViens" />
+          <NavigationProperty Name="DuAn" Relationship="AvnDataModel.FK_LienKetListDuAn" FromRole="LienKetList" ToRole="DuAn" />
+          <NavigationProperty Name="LienKets" Relationship="AvnDataModel.FK_LienKetLienKetList" FromRole="LienKetList" ToRole="LienKet" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_LienKetListNhanVien" FromRole="LienKetList" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="LienKet">
           <Key>
@@ -1165,21 +1359,21 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="LienKetListId" Type="Int32" Nullable="false" />
-          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Ten" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Link" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ten" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NguoiChiaSe" Type="Int32" Nullable="false" />
           <Property Name="ThoiGianChiaSe" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="LienKetList" Relationship="Self.FK_LienKetLienKetList" FromRole="LienKets" ToRole="LienKetLists" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_LienKetNhanVien" FromRole="LienKets" ToRole="NhanViens" />
+          <NavigationProperty Name="LienKetList" Relationship="AvnDataModel.FK_LienKetLienKetList" FromRole="LienKet" ToRole="LienKetList" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_LienKetNhanVien" FromRole="LienKet" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="MocThoiGian">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MoTa" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ten" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="NgayDenHan" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="NguoiTao" Type="Int32" Nullable="false" />
           <Property Name="ThoiGianTao" Type="DateTime" Nullable="false" Precision="3" />
@@ -1187,141 +1381,141 @@
           <Property Name="DuAnId" Type="Int32" Nullable="false" />
           <Property Name="NhacNho" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="ThongBao" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DuAn" Relationship="Self.FK_MocThoiGianDuAn" FromRole="MocThoiGians" ToRole="DuAns" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_MocThoiGian_NguoiChiuTrachNhiem" FromRole="MocThoiGians" ToRole="NhanViens" />
-          <NavigationProperty Name="NhanVien1" Relationship="Self.FK_MocThoiGian_NhanVien" FromRole="MocThoiGians" ToRole="NhanViens" />
+          <NavigationProperty Name="DuAn" Relationship="AvnDataModel.FK_MocThoiGianDuAn" FromRole="MocThoiGian" ToRole="DuAn" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_MocThoiGian_NguoiChiuTrachNhiem" FromRole="MocThoiGian" ToRole="NhanVien" />
+          <NavigationProperty Name="NhanVien1" Relationship="AvnDataModel.FK_MocThoiGian_NhanVien" FromRole="MocThoiGian" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="NhanVien">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TenDangNhap" Type="String" MaxLength="18" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="HoVaTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="SoDienThoai" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenDangNhap" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="HoVaTen" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SoDienThoai" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="NgaySinh" Type="DateTime" Precision="3" />
           <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="PhanQuyen" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="ChiPhiDuAns" Relationship="Self.FK_ChiPhiDuAnNhanVien" FromRole="NhanViens" ToRole="ChiPhiDuAns" />
-          <NavigationProperty Name="DanhMucHopDongs" Relationship="Self.FK_DanhMucHopDongNhanVien" FromRole="NhanViens" ToRole="DanhMucHopDongs" />
-          <NavigationProperty Name="DuAns" Relationship="Self.FK_DuAnNhanVien" FromRole="NhanViens" ToRole="DuAns" />
-          <NavigationProperty Name="HoaDons" Relationship="Self.FK_HoaDonNhanVien" FromRole="NhanViens" ToRole="HoaDons" />
-          <NavigationProperty Name="HopDongs" Relationship="Self.FK_NguoiKyHopDong" FromRole="NhanViens" ToRole="HopDongs" />
-          <NavigationProperty Name="KhachHangs" Relationship="Self.FK_KhachHangNhanVien" FromRole="NhanViens" ToRole="KhachHangs" />
-          <NavigationProperty Name="LienHeKhachHangs" Relationship="Self.FK_LienHeKhachHangNhanVien" FromRole="NhanViens" ToRole="LienHeKhachHangs" />
-          <NavigationProperty Name="LienKetLists" Relationship="Self.FK_LienKetListNhanVien" FromRole="NhanViens" ToRole="LienKetLists" />
-          <NavigationProperty Name="LienKets" Relationship="Self.FK_LienKetNhanVien" FromRole="NhanViens" ToRole="LienKets" />
-          <NavigationProperty Name="MocThoiGians" Relationship="Self.FK_MocThoiGian_NguoiChiuTrachNhiem" FromRole="NhanViens" ToRole="MocThoiGians" />
-          <NavigationProperty Name="MocThoiGians1" Relationship="Self.FK_MocThoiGian_NhanVien" FromRole="NhanViens" ToRole="MocThoiGians" />
-          <NavigationProperty Name="NhanXets" Relationship="Self.FK_NhanXetNhanVien" FromRole="NhanViens" ToRole="NhanXets" />
-          <NavigationProperty Name="NhomKhachHangs" Relationship="Self.FK_NhomKhachHangNhanVien" FromRole="NhanViens" ToRole="NhomKhachHangs" />
-          <NavigationProperty Name="PhuLucHopDongs" Relationship="Self.FK_PhuLucHopDong_NhanVien" FromRole="NhanViens" ToRole="PhuLucHopDongs" />
-          <NavigationProperty Name="Reminders" Relationship="Self.FK_ReminderNhanVien" FromRole="NhanViens" ToRole="Reminders" />
-          <NavigationProperty Name="RuiRoes" Relationship="Self.FK_RuiRoNhanVien" FromRole="NhanViens" ToRole="RuiRoes" />
-          <NavigationProperty Name="SoGhiChepLists" Relationship="Self.FK_SoGhiChepListNhanVien" FromRole="NhanViens" ToRole="SoGhiChepLists" />
-          <NavigationProperty Name="SoGhiCheps" Relationship="Self.FK_SoGhiChepNhanVien" FromRole="NhanViens" ToRole="SoGhiCheps" />
-          <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_NhanVien" FromRole="NhanViens" ToRole="Tasks" />
-          <NavigationProperty Name="TaskLists" Relationship="Self.FK_TaskList_NhanVien" FromRole="NhanViens" ToRole="TaskLists" />
-          <NavigationProperty Name="ThanhLyHopDongs" Relationship="Self.FK_ThanhLyHopDong_NhanVien" FromRole="NhanViens" ToRole="ThanhLyHopDongs" />
-          <NavigationProperty Name="ThanhToanHoaDons" Relationship="Self.FK_ThanhToanHoaDonNhanVien" FromRole="NhanViens" ToRole="ThanhToanHoaDons" />
-          <Property Name="ChucVu" Type="String" Nullable="false" />
-          <Property Name="Skype" Type="String" Nullable="false" />
+          <Property Name="PhanQuyen" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="ChucVu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Skype" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ChiPhiDuAns" Relationship="AvnDataModel.FK_ChiPhiDuAnNhanVien" FromRole="NhanVien" ToRole="ChiPhiDuAn" />
+          <NavigationProperty Name="DanhMucHopDongs" Relationship="AvnDataModel.FK_DanhMucHopDongNhanVien" FromRole="NhanVien" ToRole="DanhMucHopDong" />
+          <NavigationProperty Name="DuAns" Relationship="AvnDataModel.FK_DuAnNhanVien" FromRole="NhanVien" ToRole="DuAn" />
+          <NavigationProperty Name="HoaDons" Relationship="AvnDataModel.FK_HoaDonNhanVien" FromRole="NhanVien" ToRole="HoaDon" />
+          <NavigationProperty Name="HopDongs" Relationship="AvnDataModel.FK_NguoiKyHopDong" FromRole="NhanVien" ToRole="HopDong" />
+          <NavigationProperty Name="KhachHangs" Relationship="AvnDataModel.FK_KhachHangNhanVien" FromRole="NhanVien" ToRole="KhachHang" />
+          <NavigationProperty Name="LienHeKhachHangs" Relationship="AvnDataModel.FK_LienHeKhachHangNhanVien" FromRole="NhanVien" ToRole="LienHeKhachHang" />
+          <NavigationProperty Name="LienKetLists" Relationship="AvnDataModel.FK_LienKetListNhanVien" FromRole="NhanVien" ToRole="LienKetList" />
+          <NavigationProperty Name="LienKets" Relationship="AvnDataModel.FK_LienKetNhanVien" FromRole="NhanVien" ToRole="LienKet" />
+          <NavigationProperty Name="MocThoiGians" Relationship="AvnDataModel.FK_MocThoiGian_NguoiChiuTrachNhiem" FromRole="NhanVien" ToRole="MocThoiGian" />
+          <NavigationProperty Name="MocThoiGians1" Relationship="AvnDataModel.FK_MocThoiGian_NhanVien" FromRole="NhanVien" ToRole="MocThoiGian" />
+          <NavigationProperty Name="NhanXets" Relationship="AvnDataModel.FK_NhanXetNhanVien" FromRole="NhanVien" ToRole="NhanXet" />
+          <NavigationProperty Name="NhomKhachHangs" Relationship="AvnDataModel.FK_NhomKhachHangNhanVien" FromRole="NhanVien" ToRole="NhomKhachHang" />
+          <NavigationProperty Name="PhuLucHopDongs" Relationship="AvnDataModel.FK_PhuLucHopDong_NhanVien" FromRole="NhanVien" ToRole="PhuLucHopDong" />
+          <NavigationProperty Name="Reminders" Relationship="AvnDataModel.FK_ReminderNhanVien" FromRole="NhanVien" ToRole="Reminder" />
+          <NavigationProperty Name="RuiRoes" Relationship="AvnDataModel.FK_RuiRoNhanVien" FromRole="NhanVien" ToRole="RuiRo" />
+          <NavigationProperty Name="SoGhiChepLists" Relationship="AvnDataModel.FK_SoGhiChepListNhanVien" FromRole="NhanVien" ToRole="SoGhiChepList" />
+          <NavigationProperty Name="SoGhiCheps" Relationship="AvnDataModel.FK_SoGhiChepNhanVien" FromRole="NhanVien" ToRole="SoGhiChep" />
+          <NavigationProperty Name="Tasks" Relationship="AvnDataModel.FK_Task_NhanVien" FromRole="NhanVien" ToRole="Task" />
+          <NavigationProperty Name="TaskLists" Relationship="AvnDataModel.FK_TaskList_NhanVien" FromRole="NhanVien" ToRole="TaskList" />
+          <NavigationProperty Name="ThanhLyHopDongs" Relationship="AvnDataModel.FK_ThanhLyHopDong_NhanVien" FromRole="NhanVien" ToRole="ThanhLyHopDong" />
+          <NavigationProperty Name="ThanhToanHoaDons" Relationship="AvnDataModel.FK_ThanhToanHoaDonNhanVien" FromRole="NhanVien" ToRole="ThanhToanHoaDon" />
         </EntityType>
         <EntityType Name="NhanXet">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NoiDung" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NguoiNhanXet" Type="Int32" Nullable="false" />
           <Property Name="ThoiGian" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="MaNhanXet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_NhanXetNhanVien" FromRole="NhanXets" ToRole="NhanViens" />
+          <Property Name="MaNhanXet" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_NhanXetNhanVien" FromRole="NhanXet" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="NhomKhachHang">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenNhom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenNhom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="NguoiTao" Type="Int32" Nullable="false" />
           <Property Name="ThoiGianTao" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="KhachHangs" Relationship="Self.FK_NhomKhachHang_KhachHang" FromRole="NhomKhachHangs" ToRole="KhachHangs" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_NhomKhachHangNhanVien" FromRole="NhomKhachHangs" ToRole="NhanViens" />
+          <NavigationProperty Name="KhachHangs" Relationship="AvnDataModel.FK_NhomKhachHang_KhachHang" FromRole="NhomKhachHang" ToRole="KhachHang" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_NhomKhachHangNhanVien" FromRole="NhomKhachHang" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="PhuLucHopDong">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SoPhuLucHopDong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SoPhuLucHopDong" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="HopDongId" Type="Int32" Nullable="false" />
           <Property Name="NgayKy" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="NoiDung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NoiDung" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="NguoiKy" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="HopDong" Relationship="Self.FK_PhuLucHopDong_HopDong" FromRole="PhuLucHopDongs" ToRole="HopDongs" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_PhuLucHopDong_NhanVien" FromRole="PhuLucHopDongs" ToRole="NhanViens" />
+          <NavigationProperty Name="HopDong" Relationship="AvnDataModel.FK_PhuLucHopDong_HopDong" FromRole="PhuLucHopDong" ToRole="HopDong" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_PhuLucHopDong_NhanVien" FromRole="PhuLucHopDong" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="Reminder">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NhanVienList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NhanVienList" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NguoiTao" Type="Int32" Nullable="false" />
           <Property Name="ThoiGianTao" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NoiDung" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ThoiGianNhacNho" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="DuAnId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DuAn" Relationship="Self.FK_ReminderDuAn" FromRole="Reminders" ToRole="DuAns" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_ReminderNhanVien" FromRole="Reminders" ToRole="NhanViens" />
+          <NavigationProperty Name="DuAn" Relationship="AvnDataModel.FK_ReminderDuAn" FromRole="Reminder" ToRole="DuAn" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_ReminderNhanVien" FromRole="Reminder" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="RuiRo">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NguonRuiRo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="KhaNangXayRa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MucDoAnhHuong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TinhTrang" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NguonRuiRo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KhaNangXayRa" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MucDoAnhHuong" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TinhTrang" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NguoiXacDinh" Type="Int32" Nullable="false" />
           <Property Name="ThoiGianXacDinh" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GhiChu" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DuAnId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DuAn" Relationship="Self.FK_RuiRoDuAn" FromRole="RuiRoes" ToRole="DuAns" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_RuiRoNhanVien" FromRole="RuiRoes" ToRole="NhanViens" />
+          <NavigationProperty Name="DuAn" Relationship="AvnDataModel.FK_RuiRoDuAn" FromRole="RuiRo" ToRole="DuAn" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_RuiRoNhanVien" FromRole="RuiRo" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="SoGhiChepList">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ten" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MoTa" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="NguoiTao" Type="Int32" Nullable="false" />
           <Property Name="ThoiGianTao" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_SoGhiChepListNhanVien" FromRole="SoGhiChepLists" ToRole="NhanViens" />
-          <NavigationProperty Name="SoGhiCheps" Relationship="Self.FK_SoGhiChepSoGhiChepList" FromRole="SoGhiChepLists" ToRole="SoGhiCheps" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_SoGhiChepListNhanVien" FromRole="SoGhiChepList" ToRole="NhanVien" />
+          <NavigationProperty Name="SoGhiCheps" Relationship="AvnDataModel.FK_SoGhiChepSoGhiChepList" FromRole="SoGhiChepList" ToRole="SoGhiChep" />
         </EntityType>
         <EntityType Name="SoGhiChep">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Ten" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ten" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SoGhiChepListId" Type="Int32" Nullable="false" />
           <Property Name="NgayGioTao" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="NguoiTao" Type="Int32" Nullable="false" />
-          <Property Name="NoiDung" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_SoGhiChepNhanVien" FromRole="SoGhiCheps" ToRole="NhanViens" />
-          <NavigationProperty Name="SoGhiChepList" Relationship="Self.FK_SoGhiChepSoGhiChepList" FromRole="SoGhiCheps" ToRole="SoGhiChepLists" />
+          <Property Name="NoiDung" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_SoGhiChepNhanVien" FromRole="SoGhiChep" ToRole="NhanVien" />
+          <NavigationProperty Name="SoGhiChepList" Relationship="AvnDataModel.FK_SoGhiChepSoGhiChepList" FromRole="SoGhiChep" ToRole="SoGhiChepList" />
         </EntityType>
         <EntityType Name="TaskList">
           <Key>
@@ -1329,16 +1523,16 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DuAnId" Type="Int32" Nullable="false" />
-          <Property Name="TenTaskList" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenTaskList" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="NguoiTaoTaskList" Type="Int32" Nullable="false" />
           <Property Name="ThoiGianTao" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ThoiGianBatDau" Type="DateTime" Precision="3" />
           <Property Name="ThoiGianDenHan" Type="DateTime" Precision="3" />
-          <Property Name="NhanVienList" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="DuAn" Relationship="Self.FK_TaskList_DuAn" FromRole="TaskLists" ToRole="DuAns" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_TaskList_NhanVien" FromRole="TaskLists" ToRole="NhanViens" />
-          <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_TaskList" FromRole="TaskLists" ToRole="Tasks" />
+          <Property Name="NhanVienList" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DuAn" Relationship="AvnDataModel.FK_TaskList_DuAn" FromRole="TaskList" ToRole="DuAn" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_TaskList_NhanVien" FromRole="TaskList" ToRole="NhanVien" />
+          <NavigationProperty Name="Tasks" Relationship="AvnDataModel.FK_Task_TaskList" FromRole="TaskList" ToRole="Task" />
         </EntityType>
         <EntityType Name="Task">
           <Key>
@@ -1348,8 +1542,8 @@
           <Property Name="TaskListId" Type="Int32" Nullable="false" />
           <Property Name="NguoiTaoTask" Type="Int32" Nullable="false" />
           <Property Name="ThoiGianTaoTask" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="NoiDung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ChiTiet" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NoiDung" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ChiTiet" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="MucDoUuTien" Type="Byte" Nullable="false" />
           <Property Name="TienDo" Type="Byte" Nullable="false" />
           <Property Name="ThoiGianUocTinhHoanThanh" Type="Int64" />
@@ -1357,23 +1551,23 @@
           <Property Name="NhacNho" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="ThongBao" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="ThoiGianDenHan" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="NhanVienList" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_Task_NhanVien" FromRole="Tasks" ToRole="NhanViens" />
-          <NavigationProperty Name="TaskList" Relationship="Self.FK_Task_TaskList" FromRole="Tasks" ToRole="TaskLists" />
+          <Property Name="NhanVienList" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_Task_NhanVien" FromRole="Task" ToRole="NhanVien" />
+          <NavigationProperty Name="TaskList" Relationship="AvnDataModel.FK_Task_TaskList" FromRole="Task" ToRole="TaskList" />
         </EntityType>
         <EntityType Name="ThanhLyHopDong">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SoThanhLyHopDong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SoThanhLyHopDong" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NgayKy" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="NoiDung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NoiDung" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="NguoiKy" Type="Int32" Nullable="false" />
           <Property Name="HopDongId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="HopDong" Relationship="Self.FK_HopDongThanhLyHopDong" FromRole="ThanhLyHopDongs" ToRole="HopDongs" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_ThanhLyHopDong_NhanVien" FromRole="ThanhLyHopDongs" ToRole="NhanViens" />
+          <NavigationProperty Name="HopDong" Relationship="AvnDataModel.FK_HopDongThanhLyHopDong" FromRole="ThanhLyHopDong" ToRole="HopDong" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_ThanhLyHopDong_NhanVien" FromRole="ThanhLyHopDong" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="ThanhToanHoaDon">
           <Key>
@@ -1382,1039 +1576,847 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NguoiGhiSo" Type="Int32" Nullable="false" />
           <Property Name="ThoiGianGhiSo" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="SoTienThanhToan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SoTienThanhToan" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="HoaDonId" Type="Int32" Nullable="false" />
           <Property Name="DuAnId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DuAn" Relationship="Self.FK_ThanhToanHoaDonDuAn" FromRole="ThanhToanHoaDons" ToRole="DuAns" />
-          <NavigationProperty Name="HoaDon" Relationship="Self.FK_ThanhToanHoaDonHoaDon" FromRole="ThanhToanHoaDons" ToRole="HoaDons" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_ThanhToanHoaDonNhanVien" FromRole="ThanhToanHoaDons" ToRole="NhanViens" />
+          <NavigationProperty Name="DuAn" Relationship="AvnDataModel.FK_ThanhToanHoaDonDuAn" FromRole="ThanhToanHoaDon" ToRole="DuAn" />
+          <NavigationProperty Name="HoaDon" Relationship="AvnDataModel.FK_ThanhToanHoaDonHoaDon" FromRole="ThanhToanHoaDon" ToRole="HoaDon" />
+          <NavigationProperty Name="NhanVien" Relationship="AvnDataModel.FK_ThanhToanHoaDonNhanVien" FromRole="ThanhToanHoaDon" ToRole="NhanVien" />
         </EntityType>
         <Association Name="FK_ChiPhiDuAnDuAn">
-          <End Role="DuAns" Type="Self.DuAn" Multiplicity="1" />
-          <End Role="ChiPhiDuAns" Type="Self.ChiPhiDuAn" Multiplicity="*" />
+          <End Type="AvnDataModel.DuAn" Role="DuAn" Multiplicity="1" />
+          <End Type="AvnDataModel.ChiPhiDuAn" Role="ChiPhiDuAn" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="DuAns">
+            <Principal Role="DuAn">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="ChiPhiDuAns">
+            <Dependent Role="ChiPhiDuAn">
               <PropertyRef Name="DuAnId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ChiPhiDuAnNhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="ChiPhiDuAns" Type="Self.ChiPhiDuAn" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.ChiPhiDuAn" Role="ChiPhiDuAn" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="ChiPhiDuAns">
+            <Dependent Role="ChiPhiDuAn">
               <PropertyRef Name="NguoiThanhToan" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DuAnDanhMucDuAn">
-          <End Role="DanhMucDuAns" Type="Self.DanhMucDuAn" Multiplicity="1" />
-          <End Role="DuAns" Type="Self.DuAn" Multiplicity="*" />
+          <End Type="AvnDataModel.DanhMucDuAn" Role="DanhMucDuAn" Multiplicity="1" />
+          <End Type="AvnDataModel.DuAn" Role="DuAn" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="DanhMucDuAns">
+            <Principal Role="DanhMucDuAn">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="DuAns">
+            <Dependent Role="DuAn">
               <PropertyRef Name="DanhMucDuAnId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DanhMucHopDongNhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="DanhMucHopDongs" Type="Self.DanhMucHopDong" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.DanhMucHopDong" Role="DanhMucHopDong" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="DanhMucHopDongs">
+            <Dependent Role="DanhMucHopDong">
               <PropertyRef Name="NguoiTao" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HopDongDanhMucHopDong">
-          <End Role="DanhMucHopDongs" Type="Self.DanhMucHopDong" Multiplicity="1" />
-          <End Role="HopDongs" Type="Self.HopDong" Multiplicity="*" />
+          <End Type="AvnDataModel.DanhMucHopDong" Role="DanhMucHopDong" Multiplicity="1" />
+          <End Type="AvnDataModel.HopDong" Role="HopDong" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="DanhMucHopDongs">
+            <Principal Role="DanhMucHopDong">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="HopDongs">
+            <Dependent Role="HopDong">
               <PropertyRef Name="DanhMucHopDongId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DuAnNhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="DuAns" Type="Self.DuAn" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.DuAn" Role="DuAn" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="DuAns">
+            <Dependent Role="DuAn">
               <PropertyRef Name="NguoiTao" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HopDongDuAn">
-          <End Role="HopDongs" Type="Self.HopDong" Multiplicity="1" />
-          <End Role="DuAns" Type="Self.DuAn" Multiplicity="*" />
+          <End Type="AvnDataModel.HopDong" Role="HopDong" Multiplicity="1" />
+          <End Type="AvnDataModel.DuAn" Role="DuAn" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="HopDongs">
+            <Principal Role="HopDong">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="DuAns">
+            <Dependent Role="DuAn">
               <PropertyRef Name="HopDongId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LienKetListDuAn">
-          <End Role="DuAns" Type="Self.DuAn" Multiplicity="1" />
-          <End Role="LienKetLists" Type="Self.LienKetList" Multiplicity="*" />
+          <End Type="AvnDataModel.DuAn" Role="DuAn" Multiplicity="1" />
+          <End Type="AvnDataModel.LienKetList" Role="LienKetList" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="DuAns">
+            <Principal Role="DuAn">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="LienKetLists">
+            <Dependent Role="LienKetList">
               <PropertyRef Name="DuAnId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MocThoiGianDuAn">
-          <End Role="DuAns" Type="Self.DuAn" Multiplicity="1" />
-          <End Role="MocThoiGians" Type="Self.MocThoiGian" Multiplicity="*" />
+          <End Type="AvnDataModel.DuAn" Role="DuAn" Multiplicity="1" />
+          <End Type="AvnDataModel.MocThoiGian" Role="MocThoiGian" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="DuAns">
+            <Principal Role="DuAn">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="MocThoiGians">
+            <Dependent Role="MocThoiGian">
               <PropertyRef Name="DuAnId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ReminderDuAn">
-          <End Role="DuAns" Type="Self.DuAn" Multiplicity="1" />
-          <End Role="Reminders" Type="Self.Reminder" Multiplicity="*" />
+          <End Type="AvnDataModel.DuAn" Role="DuAn" Multiplicity="1" />
+          <End Type="AvnDataModel.Reminder" Role="Reminder" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="DuAns">
+            <Principal Role="DuAn">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Reminders">
+            <Dependent Role="Reminder">
               <PropertyRef Name="DuAnId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_RuiRoDuAn">
-          <End Role="DuAns" Type="Self.DuAn" Multiplicity="1" />
-          <End Role="RuiRoes" Type="Self.RuiRo" Multiplicity="*" />
+          <End Type="AvnDataModel.DuAn" Role="DuAn" Multiplicity="1" />
+          <End Type="AvnDataModel.RuiRo" Role="RuiRo" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="DuAns">
+            <Principal Role="DuAn">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="RuiRoes">
+            <Dependent Role="RuiRo">
               <PropertyRef Name="DuAnId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TaskList_DuAn">
-          <End Role="DuAns" Type="Self.DuAn" Multiplicity="1" />
-          <End Role="TaskLists" Type="Self.TaskList" Multiplicity="*" />
+          <End Type="AvnDataModel.DuAn" Role="DuAn" Multiplicity="1" />
+          <End Type="AvnDataModel.TaskList" Role="TaskList" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="DuAns">
+            <Principal Role="DuAn">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="TaskLists">
+            <Dependent Role="TaskList">
               <PropertyRef Name="DuAnId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ThanhToanDuAn">
-          <End Role="DuAns" Type="Self.DuAn" Multiplicity="1" />
-          <End Role="HoaDons" Type="Self.HoaDon" Multiplicity="*" />
+          <End Type="AvnDataModel.DuAn" Role="DuAn" Multiplicity="1" />
+          <End Type="AvnDataModel.HoaDon" Role="HoaDon" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="DuAns">
+            <Principal Role="DuAn">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="HoaDons">
+            <Dependent Role="HoaDon">
               <PropertyRef Name="DuAnId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ThanhToanHoaDonDuAn">
-          <End Role="DuAns" Type="Self.DuAn" Multiplicity="1" />
-          <End Role="ThanhToanHoaDons" Type="Self.ThanhToanHoaDon" Multiplicity="*" />
+          <End Type="AvnDataModel.DuAn" Role="DuAn" Multiplicity="1" />
+          <End Type="AvnDataModel.ThanhToanHoaDon" Role="ThanhToanHoaDon" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="DuAns">
+            <Principal Role="DuAn">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="ThanhToanHoaDons">
+            <Dependent Role="ThanhToanHoaDon">
               <PropertyRef Name="DuAnId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HoaDonNhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="HoaDons" Type="Self.HoaDon" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.HoaDon" Role="HoaDon" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="HoaDons">
+            <Dependent Role="HoaDon">
               <PropertyRef Name="NguoiLapHoaDon" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ThanhToanHoaDonHoaDon">
-          <End Role="HoaDons" Type="Self.HoaDon" Multiplicity="1" />
-          <End Role="ThanhToanHoaDons" Type="Self.ThanhToanHoaDon" Multiplicity="*" />
+          <End Type="AvnDataModel.HoaDon" Role="HoaDon" Multiplicity="1" />
+          <End Type="AvnDataModel.ThanhToanHoaDon" Role="ThanhToanHoaDon" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="HoaDons">
+            <Principal Role="HoaDon">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="ThanhToanHoaDons">
+            <Dependent Role="ThanhToanHoaDon">
               <PropertyRef Name="HoaDonId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HopDong_KhachHang">
-          <End Role="KhachHangs" Type="Self.KhachHang" Multiplicity="1" />
-          <End Role="HopDongs" Type="Self.HopDong" Multiplicity="*" />
+          <End Type="AvnDataModel.KhachHang" Role="KhachHang" Multiplicity="1" />
+          <End Type="AvnDataModel.HopDong" Role="HopDong" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="KhachHangs">
+            <Principal Role="KhachHang">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="HopDongs">
+            <Dependent Role="HopDong">
               <PropertyRef Name="KhachHangId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HopDongThanhLyHopDong">
-          <End Role="HopDongs" Type="Self.HopDong" Multiplicity="1" />
-          <End Role="ThanhLyHopDongs" Type="Self.ThanhLyHopDong" Multiplicity="*" />
+          <End Type="AvnDataModel.HopDong" Role="HopDong" Multiplicity="1" />
+          <End Type="AvnDataModel.ThanhLyHopDong" Role="ThanhLyHopDong" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="HopDongs">
+            <Principal Role="HopDong">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="ThanhLyHopDongs">
+            <Dependent Role="ThanhLyHopDong">
               <PropertyRef Name="HopDongId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_NguoiKyHopDong">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="HopDongs" Type="Self.HopDong" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.HopDong" Role="HopDong" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="HopDongs">
+            <Dependent Role="HopDong">
               <PropertyRef Name="NguoiKyHopDong" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PhuLucHopDong_HopDong">
-          <End Role="HopDongs" Type="Self.HopDong" Multiplicity="1" />
-          <End Role="PhuLucHopDongs" Type="Self.PhuLucHopDong" Multiplicity="*" />
+          <End Type="AvnDataModel.HopDong" Role="HopDong" Multiplicity="1" />
+          <End Type="AvnDataModel.PhuLucHopDong" Role="PhuLucHopDong" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="HopDongs">
+            <Principal Role="HopDong">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="PhuLucHopDongs">
+            <Dependent Role="PhuLucHopDong">
               <PropertyRef Name="HopDongId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_KhachHangNhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="KhachHangs" Type="Self.KhachHang" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.KhachHang" Role="KhachHang" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="KhachHangs">
+            <Dependent Role="KhachHang">
               <PropertyRef Name="NguoiThem" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LienHeKhachHangKhachHang">
-          <End Role="KhachHangs" Type="Self.KhachHang" Multiplicity="1" />
-          <End Role="LienHeKhachHangs" Type="Self.LienHeKhachHang" Multiplicity="*" />
+          <End Type="AvnDataModel.KhachHang" Role="KhachHang" Multiplicity="1" />
+          <End Type="AvnDataModel.LienHeKhachHang" Role="LienHeKhachHang" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="KhachHangs">
+            <Principal Role="KhachHang">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="LienHeKhachHangs">
+            <Dependent Role="LienHeKhachHang">
               <PropertyRef Name="KhachHangId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_NhomKhachHang_KhachHang">
-          <End Role="NhomKhachHangs" Type="Self.NhomKhachHang" Multiplicity="1" />
-          <End Role="KhachHangs" Type="Self.KhachHang" Multiplicity="*" />
+          <End Type="AvnDataModel.NhomKhachHang" Role="NhomKhachHang" Multiplicity="1" />
+          <End Type="AvnDataModel.KhachHang" Role="KhachHang" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhomKhachHangs">
+            <Principal Role="NhomKhachHang">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="KhachHangs">
+            <Dependent Role="KhachHang">
               <PropertyRef Name="NhomKhachHangId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LienHeKhachHangNhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="LienHeKhachHangs" Type="Self.LienHeKhachHang" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.LienHeKhachHang" Role="LienHeKhachHang" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="LienHeKhachHangs">
+            <Dependent Role="LienHeKhachHang">
               <PropertyRef Name="NguoiThem" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LienKetLienKetList">
-          <End Role="LienKetLists" Type="Self.LienKetList" Multiplicity="1" />
-          <End Role="LienKets" Type="Self.LienKet" Multiplicity="*" />
+          <End Type="AvnDataModel.LienKetList" Role="LienKetList" Multiplicity="1" />
+          <End Type="AvnDataModel.LienKet" Role="LienKet" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="LienKetLists">
+            <Principal Role="LienKetList">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="LienKets">
+            <Dependent Role="LienKet">
               <PropertyRef Name="LienKetListId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LienKetListNhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="LienKetLists" Type="Self.LienKetList" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.LienKetList" Role="LienKetList" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="LienKetLists">
+            <Dependent Role="LienKetList">
               <PropertyRef Name="NguoiTao" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LienKetNhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="LienKets" Type="Self.LienKet" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.LienKet" Role="LienKet" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="LienKets">
+            <Dependent Role="LienKet">
               <PropertyRef Name="NguoiChiaSe" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MocThoiGian_NguoiChiuTrachNhiem">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="MocThoiGians" Type="Self.MocThoiGian" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.MocThoiGian" Role="MocThoiGian" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="MocThoiGians">
+            <Dependent Role="MocThoiGian">
               <PropertyRef Name="NguoiChiuTrachNhiem" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MocThoiGian_NhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="MocThoiGians" Type="Self.MocThoiGian" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.MocThoiGian" Role="MocThoiGian" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="MocThoiGians">
+            <Dependent Role="MocThoiGian">
               <PropertyRef Name="NguoiTao" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_NhanXetNhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="NhanXets" Type="Self.NhanXet" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.NhanXet" Role="NhanXet" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="NhanXets">
+            <Dependent Role="NhanXet">
               <PropertyRef Name="NguoiNhanXet" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_NhomKhachHangNhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="NhomKhachHangs" Type="Self.NhomKhachHang" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.NhomKhachHang" Role="NhomKhachHang" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="NhomKhachHangs">
+            <Dependent Role="NhomKhachHang">
               <PropertyRef Name="NguoiTao" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PhuLucHopDong_NhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="PhuLucHopDongs" Type="Self.PhuLucHopDong" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.PhuLucHopDong" Role="PhuLucHopDong" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="PhuLucHopDongs">
+            <Dependent Role="PhuLucHopDong">
               <PropertyRef Name="NguoiKy" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ReminderNhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="Reminders" Type="Self.Reminder" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.Reminder" Role="Reminder" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Reminders">
+            <Dependent Role="Reminder">
               <PropertyRef Name="NguoiTao" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_RuiRoNhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="RuiRoes" Type="Self.RuiRo" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.RuiRo" Role="RuiRo" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="RuiRoes">
+            <Dependent Role="RuiRo">
               <PropertyRef Name="NguoiXacDinh" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SoGhiChepListNhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="SoGhiChepLists" Type="Self.SoGhiChepList" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.SoGhiChepList" Role="SoGhiChepList" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="SoGhiChepLists">
+            <Dependent Role="SoGhiChepList">
               <PropertyRef Name="NguoiTao" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SoGhiChepNhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="SoGhiCheps" Type="Self.SoGhiChep" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.SoGhiChep" Role="SoGhiChep" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="SoGhiCheps">
+            <Dependent Role="SoGhiChep">
               <PropertyRef Name="NguoiTao" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Task_NhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="Tasks" Type="Self.Task" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.Task" Role="Task" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Tasks">
+            <Dependent Role="Task">
               <PropertyRef Name="NguoiTaoTask" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TaskList_NhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="TaskLists" Type="Self.TaskList" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.TaskList" Role="TaskList" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="TaskLists">
+            <Dependent Role="TaskList">
               <PropertyRef Name="NguoiTaoTaskList" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ThanhLyHopDong_NhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="ThanhLyHopDongs" Type="Self.ThanhLyHopDong" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.ThanhLyHopDong" Role="ThanhLyHopDong" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="ThanhLyHopDongs">
+            <Dependent Role="ThanhLyHopDong">
               <PropertyRef Name="NguoiKy" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ThanhToanHoaDonNhanVien">
-          <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
-          <End Role="ThanhToanHoaDons" Type="Self.ThanhToanHoaDon" Multiplicity="*" />
+          <End Type="AvnDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+          <End Type="AvnDataModel.ThanhToanHoaDon" Role="ThanhToanHoaDon" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NhanViens">
+            <Principal Role="NhanVien">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="ThanhToanHoaDons">
+            <Dependent Role="ThanhToanHoaDon">
               <PropertyRef Name="NguoiGhiSo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SoGhiChepSoGhiChepList">
-          <End Role="SoGhiChepLists" Type="Self.SoGhiChepList" Multiplicity="1" />
-          <End Role="SoGhiCheps" Type="Self.SoGhiChep" Multiplicity="*" />
+          <End Type="AvnDataModel.SoGhiChepList" Role="SoGhiChepList" Multiplicity="1" />
+          <End Type="AvnDataModel.SoGhiChep" Role="SoGhiChep" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="SoGhiChepLists">
+            <Principal Role="SoGhiChepList">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="SoGhiCheps">
+            <Dependent Role="SoGhiChep">
               <PropertyRef Name="SoGhiChepListId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Task_TaskList">
-          <End Role="TaskLists" Type="Self.TaskList" Multiplicity="1" />
-          <End Role="Tasks" Type="Self.Task" Multiplicity="*" />
+          <End Type="AvnDataModel.TaskList" Role="TaskList" Multiplicity="1" />
+          <End Type="AvnDataModel.Task" Role="Task" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="TaskLists">
+            <Principal Role="TaskList">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Tasks">
+            <Dependent Role="Task">
               <PropertyRef Name="TaskListId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="AvnDataEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ChiPhiDuAns" EntityType="Self.ChiPhiDuAn" />
-          <EntitySet Name="DanhMucDuAns" EntityType="Self.DanhMucDuAn" />
-          <EntitySet Name="DanhMucHopDongs" EntityType="Self.DanhMucHopDong" />
-          <EntitySet Name="DuAns" EntityType="Self.DuAn" />
-          <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
-          <EntitySet Name="HopDongs" EntityType="Self.HopDong" />
-          <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
-          <EntitySet Name="LienHeKhachHangs" EntityType="Self.LienHeKhachHang" />
-          <EntitySet Name="LienKetLists" EntityType="Self.LienKetList" />
-          <EntitySet Name="LienKets" EntityType="Self.LienKet" />
-          <EntitySet Name="MocThoiGians" EntityType="Self.MocThoiGian" />
-          <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
-          <EntitySet Name="NhanXets" EntityType="Self.NhanXet" />
-          <EntitySet Name="NhomKhachHangs" EntityType="Self.NhomKhachHang" />
-          <EntitySet Name="PhuLucHopDongs" EntityType="Self.PhuLucHopDong" />
-          <EntitySet Name="Reminders" EntityType="Self.Reminder" />
-          <EntitySet Name="RuiRoes" EntityType="Self.RuiRo" />
-          <EntitySet Name="SoGhiChepLists" EntityType="Self.SoGhiChepList" />
-          <EntitySet Name="SoGhiCheps" EntityType="Self.SoGhiChep" />
-          <EntitySet Name="TaskLists" EntityType="Self.TaskList" />
-          <EntitySet Name="Tasks" EntityType="Self.Task" />
-          <EntitySet Name="ThanhLyHopDongs" EntityType="Self.ThanhLyHopDong" />
-          <EntitySet Name="ThanhToanHoaDons" EntityType="Self.ThanhToanHoaDon" />
-          <AssociationSet Name="FK_ChiPhiDuAnDuAn" Association="Self.FK_ChiPhiDuAnDuAn">
-            <End Role="DuAns" EntitySet="DuAns" />
-            <End Role="ChiPhiDuAns" EntitySet="ChiPhiDuAns" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiPhiDuAnNhanVien" Association="Self.FK_ChiPhiDuAnNhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="ChiPhiDuAns" EntitySet="ChiPhiDuAns" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DuAnDanhMucDuAn" Association="Self.FK_DuAnDanhMucDuAn">
-            <End Role="DanhMucDuAns" EntitySet="DanhMucDuAns" />
-            <End Role="DuAns" EntitySet="DuAns" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DanhMucHopDongNhanVien" Association="Self.FK_DanhMucHopDongNhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="DanhMucHopDongs" EntitySet="DanhMucHopDongs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HopDongDanhMucHopDong" Association="Self.FK_HopDongDanhMucHopDong">
-            <End Role="DanhMucHopDongs" EntitySet="DanhMucHopDongs" />
-            <End Role="HopDongs" EntitySet="HopDongs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DuAnNhanVien" Association="Self.FK_DuAnNhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="DuAns" EntitySet="DuAns" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HopDongDuAn" Association="Self.FK_HopDongDuAn">
-            <End Role="HopDongs" EntitySet="HopDongs" />
-            <End Role="DuAns" EntitySet="DuAns" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LienKetListDuAn" Association="Self.FK_LienKetListDuAn">
-            <End Role="DuAns" EntitySet="DuAns" />
-            <End Role="LienKetLists" EntitySet="LienKetLists" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MocThoiGianDuAn" Association="Self.FK_MocThoiGianDuAn">
-            <End Role="DuAns" EntitySet="DuAns" />
-            <End Role="MocThoiGians" EntitySet="MocThoiGians" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ReminderDuAn" Association="Self.FK_ReminderDuAn">
-            <End Role="DuAns" EntitySet="DuAns" />
-            <End Role="Reminders" EntitySet="Reminders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RuiRoDuAn" Association="Self.FK_RuiRoDuAn">
-            <End Role="DuAns" EntitySet="DuAns" />
-            <End Role="RuiRoes" EntitySet="RuiRoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TaskList_DuAn" Association="Self.FK_TaskList_DuAn">
-            <End Role="DuAns" EntitySet="DuAns" />
-            <End Role="TaskLists" EntitySet="TaskLists" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ThanhToanDuAn" Association="Self.FK_ThanhToanDuAn">
-            <End Role="DuAns" EntitySet="DuAns" />
-            <End Role="HoaDons" EntitySet="HoaDons" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ThanhToanHoaDonDuAn" Association="Self.FK_ThanhToanHoaDonDuAn">
-            <End Role="DuAns" EntitySet="DuAns" />
-            <End Role="ThanhToanHoaDons" EntitySet="ThanhToanHoaDons" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HoaDonNhanVien" Association="Self.FK_HoaDonNhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="HoaDons" EntitySet="HoaDons" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ThanhToanHoaDonHoaDon" Association="Self.FK_ThanhToanHoaDonHoaDon">
-            <End Role="HoaDons" EntitySet="HoaDons" />
-            <End Role="ThanhToanHoaDons" EntitySet="ThanhToanHoaDons" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HopDong_KhachHang" Association="Self.FK_HopDong_KhachHang">
-            <End Role="KhachHangs" EntitySet="KhachHangs" />
-            <End Role="HopDongs" EntitySet="HopDongs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HopDongThanhLyHopDong" Association="Self.FK_HopDongThanhLyHopDong">
-            <End Role="HopDongs" EntitySet="HopDongs" />
-            <End Role="ThanhLyHopDongs" EntitySet="ThanhLyHopDongs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NguoiKyHopDong" Association="Self.FK_NguoiKyHopDong">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="HopDongs" EntitySet="HopDongs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PhuLucHopDong_HopDong" Association="Self.FK_PhuLucHopDong_HopDong">
-            <End Role="HopDongs" EntitySet="HopDongs" />
-            <End Role="PhuLucHopDongs" EntitySet="PhuLucHopDongs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_KhachHangNhanVien" Association="Self.FK_KhachHangNhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="KhachHangs" EntitySet="KhachHangs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LienHeKhachHangKhachHang" Association="Self.FK_LienHeKhachHangKhachHang">
-            <End Role="KhachHangs" EntitySet="KhachHangs" />
-            <End Role="LienHeKhachHangs" EntitySet="LienHeKhachHangs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NhomKhachHang_KhachHang" Association="Self.FK_NhomKhachHang_KhachHang">
-            <End Role="NhomKhachHangs" EntitySet="NhomKhachHangs" />
-            <End Role="KhachHangs" EntitySet="KhachHangs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LienHeKhachHangNhanVien" Association="Self.FK_LienHeKhachHangNhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="LienHeKhachHangs" EntitySet="LienHeKhachHangs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LienKetLienKetList" Association="Self.FK_LienKetLienKetList">
-            <End Role="LienKetLists" EntitySet="LienKetLists" />
-            <End Role="LienKets" EntitySet="LienKets" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LienKetListNhanVien" Association="Self.FK_LienKetListNhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="LienKetLists" EntitySet="LienKetLists" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LienKetNhanVien" Association="Self.FK_LienKetNhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="LienKets" EntitySet="LienKets" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MocThoiGian_NguoiChiuTrachNhiem" Association="Self.FK_MocThoiGian_NguoiChiuTrachNhiem">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="MocThoiGians" EntitySet="MocThoiGians" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MocThoiGian_NhanVien" Association="Self.FK_MocThoiGian_NhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="MocThoiGians" EntitySet="MocThoiGians" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NhanXetNhanVien" Association="Self.FK_NhanXetNhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="NhanXets" EntitySet="NhanXets" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NhomKhachHangNhanVien" Association="Self.FK_NhomKhachHangNhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="NhomKhachHangs" EntitySet="NhomKhachHangs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PhuLucHopDong_NhanVien" Association="Self.FK_PhuLucHopDong_NhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="PhuLucHopDongs" EntitySet="PhuLucHopDongs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ReminderNhanVien" Association="Self.FK_ReminderNhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="Reminders" EntitySet="Reminders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RuiRoNhanVien" Association="Self.FK_RuiRoNhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="RuiRoes" EntitySet="RuiRoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SoGhiChepListNhanVien" Association="Self.FK_SoGhiChepListNhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="SoGhiChepLists" EntitySet="SoGhiChepLists" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SoGhiChepNhanVien" Association="Self.FK_SoGhiChepNhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="SoGhiCheps" EntitySet="SoGhiCheps" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Task_NhanVien" Association="Self.FK_Task_NhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="Tasks" EntitySet="Tasks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TaskList_NhanVien" Association="Self.FK_TaskList_NhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="TaskLists" EntitySet="TaskLists" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ThanhLyHopDong_NhanVien" Association="Self.FK_ThanhLyHopDong_NhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="ThanhLyHopDongs" EntitySet="ThanhLyHopDongs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ThanhToanHoaDonNhanVien" Association="Self.FK_ThanhToanHoaDonNhanVien">
-            <End Role="NhanViens" EntitySet="NhanViens" />
-            <End Role="ThanhToanHoaDons" EntitySet="ThanhToanHoaDons" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SoGhiChepSoGhiChepList" Association="Self.FK_SoGhiChepSoGhiChepList">
-            <End Role="SoGhiChepLists" EntitySet="SoGhiChepLists" />
-            <End Role="SoGhiCheps" EntitySet="SoGhiCheps" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Task_TaskList" Association="Self.FK_Task_TaskList">
-            <End Role="TaskLists" EntitySet="TaskLists" />
-            <End Role="Tasks" EntitySet="Tasks" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AvnDataModelStoreContainer" CdmEntityContainer="AvnDataEntities">
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AvnDataModelStoreContainer" CdmEntityContainer="AvnDataEntities">
           <EntitySetMapping Name="ChiPhiDuAns">
             <EntityTypeMapping TypeName="AvnDataModel.ChiPhiDuAn">
               <MappingFragment StoreEntitySet="ChiPhiDuAns">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="MoTaChiPhi" ColumnName="MoTaChiPhi" />
-                <ScalarProperty Name="NgayHoaDon" ColumnName="NgayHoaDon" />
-                <ScalarProperty Name="SoHoaDon" ColumnName="SoHoaDon" />
-                <ScalarProperty Name="SoTienChuaThue" ColumnName="SoTienChuaThue" />
-                <ScalarProperty Name="ThueGTGT" ColumnName="ThueGTGT" />
-                <ScalarProperty Name="ThoiGianThanhToan" ColumnName="ThoiGianThanhToan" />
-                <ScalarProperty Name="NguoiThanhToan" ColumnName="NguoiThanhToan" />
-                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
                 <ScalarProperty Name="DuAnId" ColumnName="DuAnId" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="NguoiThanhToan" ColumnName="NguoiThanhToan" />
+                <ScalarProperty Name="ThoiGianThanhToan" ColumnName="ThoiGianThanhToan" />
+                <ScalarProperty Name="ThueGTGT" ColumnName="ThueGTGT" />
+                <ScalarProperty Name="SoTienChuaThue" ColumnName="SoTienChuaThue" />
+                <ScalarProperty Name="SoHoaDon" ColumnName="SoHoaDon" />
+                <ScalarProperty Name="NgayHoaDon" ColumnName="NgayHoaDon" />
+                <ScalarProperty Name="MoTaChiPhi" ColumnName="MoTaChiPhi" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DanhMucDuAns">
             <EntityTypeMapping TypeName="AvnDataModel.DanhMucDuAn">
               <MappingFragment StoreEntitySet="DanhMucDuAns">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="MaDanhMuc" ColumnName="MaDanhMuc" />
-                <ScalarProperty Name="TenDanhMuc" ColumnName="TenDanhMuc" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="TenDanhMuc" ColumnName="TenDanhMuc" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DanhMucHopDongs">
             <EntityTypeMapping TypeName="AvnDataModel.DanhMucHopDong">
               <MappingFragment StoreEntitySet="DanhMucHopDongs">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="TenDanhMuc" ColumnName="TenDanhMuc" />
-                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
-                <ScalarProperty Name="NgayGioTao" ColumnName="NgayGioTao" />
-                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
-                <ScalarProperty Name="SoLuongHopDong" ColumnName="SoLuongHopDong" />
                 <ScalarProperty Name="DanhMucCha" ColumnName="DanhMucCha" />
+                <ScalarProperty Name="SoLuongHopDong" ColumnName="SoLuongHopDong" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="NgayGioTao" ColumnName="NgayGioTao" />
+                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
+                <ScalarProperty Name="TenDanhMuc" ColumnName="TenDanhMuc" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DuAns">
             <EntityTypeMapping TypeName="AvnDataModel.DuAn">
               <MappingFragment StoreEntitySet="DuAns">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="MaDuAn" ColumnName="MaDuAn" />
-                <ScalarProperty Name="TenDuAn" ColumnName="TenDuAn" />
-                <ScalarProperty Name="HopDongId" ColumnName="HopDongId" />
-                <ScalarProperty Name="DanhMucDuAnId" ColumnName="DanhMucDuAnId" />
-                <ScalarProperty Name="ThoiGianTao" ColumnName="ThoiGianTao" />
-                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
                 <ScalarProperty Name="NhanVienList" ColumnName="NhanVienList" />
+                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
+                <ScalarProperty Name="ThoiGianTao" ColumnName="ThoiGianTao" />
+                <ScalarProperty Name="DanhMucDuAnId" ColumnName="DanhMucDuAnId" />
+                <ScalarProperty Name="HopDongId" ColumnName="HopDongId" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="TenDuAn" ColumnName="TenDuAn" />
+                <ScalarProperty Name="MaDuAn" ColumnName="MaDuAn" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HoaDons">
             <EntityTypeMapping TypeName="AvnDataModel.HoaDon">
               <MappingFragment StoreEntitySet="HoaDons">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="DuAnId" ColumnName="DuAnId" />
-                <ScalarProperty Name="SoHoaDon" ColumnName="SoHoaDon" />
-                <ScalarProperty Name="NgayHoaDon" ColumnName="NgayHoaDon" />
-                <ScalarProperty Name="SoTienChuaThue" ColumnName="SoTienChuaThue" />
-                <ScalarProperty Name="ThueGTGT" ColumnName="ThueGTGT" />
-                <ScalarProperty Name="NguoiLapHoaDon" ColumnName="NguoiLapHoaDon" />
-                <ScalarProperty Name="ThoiGianLapHoaDon" ColumnName="ThoiGianLapHoaDon" />
                 <ScalarProperty Name="TinhTrangHoaDon" ColumnName="TinhTrangHoaDon" />
+                <ScalarProperty Name="ThoiGianLapHoaDon" ColumnName="ThoiGianLapHoaDon" />
+                <ScalarProperty Name="NguoiLapHoaDon" ColumnName="NguoiLapHoaDon" />
+                <ScalarProperty Name="ThueGTGT" ColumnName="ThueGTGT" />
+                <ScalarProperty Name="SoTienChuaThue" ColumnName="SoTienChuaThue" />
+                <ScalarProperty Name="NgayHoaDon" ColumnName="NgayHoaDon" />
+                <ScalarProperty Name="SoHoaDon" ColumnName="SoHoaDon" />
+                <ScalarProperty Name="DuAnId" ColumnName="DuAnId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HopDongs">
             <EntityTypeMapping TypeName="AvnDataModel.HopDong">
               <MappingFragment StoreEntitySet="HopDongs">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="SoHopDong" ColumnName="SoHopDong" />
-                <ScalarProperty Name="NgayKy" ColumnName="NgayKy" />
-                <ScalarProperty Name="NguoiKyHopDong" ColumnName="NguoiKyHopDong" />
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-                <ScalarProperty Name="KhachHangId" ColumnName="KhachHangId" />
-                <ScalarProperty Name="GiaTriHopDong" ColumnName="GiaTriHopDong" />
                 <ScalarProperty Name="DanhMucHopDongId" ColumnName="DanhMucHopDongId" />
+                <ScalarProperty Name="GiaTriHopDong" ColumnName="GiaTriHopDong" />
+                <ScalarProperty Name="KhachHangId" ColumnName="KhachHangId" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="NguoiKyHopDong" ColumnName="NguoiKyHopDong" />
+                <ScalarProperty Name="NgayKy" ColumnName="NgayKy" />
+                <ScalarProperty Name="SoHopDong" ColumnName="SoHopDong" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="KhachHangs">
             <EntityTypeMapping TypeName="AvnDataModel.KhachHang">
               <MappingFragment StoreEntitySet="KhachHangs">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
-                <ScalarProperty Name="TenKhachHang" ColumnName="TenKhachHang" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-                <ScalarProperty Name="NhomKhachHangId" ColumnName="NhomKhachHangId" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
-                <ScalarProperty Name="Website" ColumnName="Website" />
-                <ScalarProperty Name="NguoiThem" ColumnName="NguoiThem" />
                 <ScalarProperty Name="ThoiGianThem" ColumnName="ThoiGianThem" />
+                <ScalarProperty Name="NguoiThem" ColumnName="NguoiThem" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NhomKhachHangId" ColumnName="NhomKhachHangId" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="TenKhachHang" ColumnName="TenKhachHang" />
+                <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LienHeKhachHangs">
             <EntityTypeMapping TypeName="AvnDataModel.LienHeKhachHang">
               <MappingFragment StoreEntitySet="LienHeKhachHangs">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="HoVaTen" ColumnName="HoVaTen" />
-                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
-                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="KhachHangId" ColumnName="KhachHangId" />
-                <ScalarProperty Name="NguoiThem" ColumnName="NguoiThem" />
                 <ScalarProperty Name="ThoiGianThem" ColumnName="ThoiGianThem" />
+                <ScalarProperty Name="NguoiThem" ColumnName="NguoiThem" />
+                <ScalarProperty Name="KhachHangId" ColumnName="KhachHangId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="HoVaTen" ColumnName="HoVaTen" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LienKetLists">
             <EntityTypeMapping TypeName="AvnDataModel.LienKetList">
               <MappingFragment StoreEntitySet="LienKetLists">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="TenNhomLienKet" ColumnName="TenNhomLienKet" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
-                <ScalarProperty Name="ThoiGianTao" ColumnName="ThoiGianTao" />
                 <ScalarProperty Name="DuAnId" ColumnName="DuAnId" />
+                <ScalarProperty Name="ThoiGianTao" ColumnName="ThoiGianTao" />
+                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="TenNhomLienKet" ColumnName="TenNhomLienKet" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LienKets">
             <EntityTypeMapping TypeName="AvnDataModel.LienKet">
               <MappingFragment StoreEntitySet="LienKets">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="LienKetListId" ColumnName="LienKetListId" />
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="Ten" ColumnName="Ten" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-                <ScalarProperty Name="NguoiChiaSe" ColumnName="NguoiChiaSe" />
                 <ScalarProperty Name="ThoiGianChiaSe" ColumnName="ThoiGianChiaSe" />
+                <ScalarProperty Name="NguoiChiaSe" ColumnName="NguoiChiaSe" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="LienKetListId" ColumnName="LienKetListId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MocThoiGians">
             <EntityTypeMapping TypeName="AvnDataModel.MocThoiGian">
               <MappingFragment StoreEntitySet="MocThoiGians">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Ten" ColumnName="Ten" />
-                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
-                <ScalarProperty Name="NgayDenHan" ColumnName="NgayDenHan" />
-                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
-                <ScalarProperty Name="ThoiGianTao" ColumnName="ThoiGianTao" />
-                <ScalarProperty Name="NguoiChiuTrachNhiem" ColumnName="NguoiChiuTrachNhiem" />
-                <ScalarProperty Name="DuAnId" ColumnName="DuAnId" />
-                <ScalarProperty Name="NhacNho" ColumnName="NhacNho" />
                 <ScalarProperty Name="ThongBao" ColumnName="ThongBao" />
+                <ScalarProperty Name="NhacNho" ColumnName="NhacNho" />
+                <ScalarProperty Name="DuAnId" ColumnName="DuAnId" />
+                <ScalarProperty Name="NguoiChiuTrachNhiem" ColumnName="NguoiChiuTrachNhiem" />
+                <ScalarProperty Name="ThoiGianTao" ColumnName="ThoiGianTao" />
+                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
+                <ScalarProperty Name="NgayDenHan" ColumnName="NgayDenHan" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhanViens">
             <EntityTypeMapping TypeName="AvnDataModel.NhanVien">
               <MappingFragment StoreEntitySet="NhanViens">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="HoVaTen" ColumnName="HoVaTen" />
-                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
-                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="Skype" ColumnName="Skype" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
                 <ScalarProperty Name="PhanQuyen" ColumnName="PhanQuyen" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="HoVaTen" ColumnName="HoVaTen" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhanXets">
             <EntityTypeMapping TypeName="AvnDataModel.NhanXet">
               <MappingFragment StoreEntitySet="NhanXets">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-                <ScalarProperty Name="NguoiNhanXet" ColumnName="NguoiNhanXet" />
-                <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
                 <ScalarProperty Name="MaNhanXet" ColumnName="MaNhanXet" />
+                <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+                <ScalarProperty Name="NguoiNhanXet" ColumnName="NguoiNhanXet" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhomKhachHangs">
             <EntityTypeMapping TypeName="AvnDataModel.NhomKhachHang">
               <MappingFragment StoreEntitySet="NhomKhachHangs">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="TenNhom" ColumnName="TenNhom" />
-                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
                 <ScalarProperty Name="ThoiGianTao" ColumnName="ThoiGianTao" />
+                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
+                <ScalarProperty Name="TenNhom" ColumnName="TenNhom" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PhuLucHopDongs">
             <EntityTypeMapping TypeName="AvnDataModel.PhuLucHopDong">
               <MappingFragment StoreEntitySet="PhuLucHopDongs">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="SoPhuLucHopDong" ColumnName="SoPhuLucHopDong" />
-                <ScalarProperty Name="HopDongId" ColumnName="HopDongId" />
-                <ScalarProperty Name="NgayKy" ColumnName="NgayKy" />
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
                 <ScalarProperty Name="NguoiKy" ColumnName="NguoiKy" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="NgayKy" ColumnName="NgayKy" />
+                <ScalarProperty Name="HopDongId" ColumnName="HopDongId" />
+                <ScalarProperty Name="SoPhuLucHopDong" ColumnName="SoPhuLucHopDong" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Reminders">
             <EntityTypeMapping TypeName="AvnDataModel.Reminder">
               <MappingFragment StoreEntitySet="Reminders">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="NhanVienList" ColumnName="NhanVienList" />
-                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
-                <ScalarProperty Name="ThoiGianTao" ColumnName="ThoiGianTao" />
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-                <ScalarProperty Name="ThoiGianNhacNho" ColumnName="ThoiGianNhacNho" />
                 <ScalarProperty Name="DuAnId" ColumnName="DuAnId" />
+                <ScalarProperty Name="ThoiGianNhacNho" ColumnName="ThoiGianNhacNho" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="ThoiGianTao" ColumnName="ThoiGianTao" />
+                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
+                <ScalarProperty Name="NhanVienList" ColumnName="NhanVienList" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RuiRoes">
             <EntityTypeMapping TypeName="AvnDataModel.RuiRo">
               <MappingFragment StoreEntitySet="RuiRoes">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="NguonRuiRo" ColumnName="NguonRuiRo" />
-                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
-                <ScalarProperty Name="KhaNangXayRa" ColumnName="KhaNangXayRa" />
-                <ScalarProperty Name="MucDoAnhHuong" ColumnName="MucDoAnhHuong" />
-                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
-                <ScalarProperty Name="NguoiXacDinh" ColumnName="NguoiXacDinh" />
-                <ScalarProperty Name="ThoiGianXacDinh" ColumnName="ThoiGianXacDinh" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
                 <ScalarProperty Name="DuAnId" ColumnName="DuAnId" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="ThoiGianXacDinh" ColumnName="ThoiGianXacDinh" />
+                <ScalarProperty Name="NguoiXacDinh" ColumnName="NguoiXacDinh" />
+                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="MucDoAnhHuong" ColumnName="MucDoAnhHuong" />
+                <ScalarProperty Name="KhaNangXayRa" ColumnName="KhaNangXayRa" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="NguonRuiRo" ColumnName="NguonRuiRo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SoGhiChepLists">
             <EntityTypeMapping TypeName="AvnDataModel.SoGhiChepList">
               <MappingFragment StoreEntitySet="SoGhiChepLists">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Ten" ColumnName="Ten" />
-                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
                 <ScalarProperty Name="ThoiGianTao" ColumnName="ThoiGianTao" />
+                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SoGhiCheps">
             <EntityTypeMapping TypeName="AvnDataModel.SoGhiChep">
               <MappingFragment StoreEntitySet="SoGhiCheps">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Ten" ColumnName="Ten" />
-                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
-                <ScalarProperty Name="SoGhiChepListId" ColumnName="SoGhiChepListId" />
-                <ScalarProperty Name="NgayGioTao" ColumnName="NgayGioTao" />
-                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
                 <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
+                <ScalarProperty Name="NgayGioTao" ColumnName="NgayGioTao" />
+                <ScalarProperty Name="SoGhiChepListId" ColumnName="SoGhiChepListId" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TaskLists">
             <EntityTypeMapping TypeName="AvnDataModel.TaskList">
               <MappingFragment StoreEntitySet="TaskLists">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="DuAnId" ColumnName="DuAnId" />
-                <ScalarProperty Name="TenTaskList" ColumnName="TenTaskList" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-                <ScalarProperty Name="NguoiTaoTaskList" ColumnName="NguoiTaoTaskList" />
-                <ScalarProperty Name="ThoiGianTao" ColumnName="ThoiGianTao" />
-                <ScalarProperty Name="ThoiGianBatDau" ColumnName="ThoiGianBatDau" />
-                <ScalarProperty Name="ThoiGianDenHan" ColumnName="ThoiGianDenHan" />
                 <ScalarProperty Name="NhanVienList" ColumnName="NhanVienList" />
+                <ScalarProperty Name="ThoiGianDenHan" ColumnName="ThoiGianDenHan" />
+                <ScalarProperty Name="ThoiGianBatDau" ColumnName="ThoiGianBatDau" />
+                <ScalarProperty Name="ThoiGianTao" ColumnName="ThoiGianTao" />
+                <ScalarProperty Name="NguoiTaoTaskList" ColumnName="NguoiTaoTaskList" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="TenTaskList" ColumnName="TenTaskList" />
+                <ScalarProperty Name="DuAnId" ColumnName="DuAnId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tasks">
             <EntityTypeMapping TypeName="AvnDataModel.Task">
               <MappingFragment StoreEntitySet="Tasks">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="TaskListId" ColumnName="TaskListId" />
-                <ScalarProperty Name="NguoiTaoTask" ColumnName="NguoiTaoTask" />
-                <ScalarProperty Name="ThoiGianTaoTask" ColumnName="ThoiGianTaoTask" />
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-                <ScalarProperty Name="ChiTiet" ColumnName="ChiTiet" />
-                <ScalarProperty Name="MucDoUuTien" ColumnName="MucDoUuTien" />
-                <ScalarProperty Name="TienDo" ColumnName="TienDo" />
-                <ScalarProperty Name="ThoiGianUocTinhHoanThanh" ColumnName="ThoiGianUocTinhHoanThanh" />
-                <ScalarProperty Name="Tag" ColumnName="Tag" />
-                <ScalarProperty Name="NhacNho" ColumnName="NhacNho" />
-                <ScalarProperty Name="ThongBao" ColumnName="ThongBao" />
-                <ScalarProperty Name="ThoiGianDenHan" ColumnName="ThoiGianDenHan" />
                 <ScalarProperty Name="NhanVienList" ColumnName="NhanVienList" />
+                <ScalarProperty Name="ThoiGianDenHan" ColumnName="ThoiGianDenHan" />
+                <ScalarProperty Name="ThongBao" ColumnName="ThongBao" />
+                <ScalarProperty Name="NhacNho" ColumnName="NhacNho" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="ThoiGianUocTinhHoanThanh" ColumnName="ThoiGianUocTinhHoanThanh" />
+                <ScalarProperty Name="TienDo" ColumnName="TienDo" />
+                <ScalarProperty Name="MucDoUuTien" ColumnName="MucDoUuTien" />
+                <ScalarProperty Name="ChiTiet" ColumnName="ChiTiet" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="ThoiGianTaoTask" ColumnName="ThoiGianTaoTask" />
+                <ScalarProperty Name="NguoiTaoTask" ColumnName="NguoiTaoTask" />
+                <ScalarProperty Name="TaskListId" ColumnName="TaskListId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ThanhLyHopDongs">
             <EntityTypeMapping TypeName="AvnDataModel.ThanhLyHopDong">
               <MappingFragment StoreEntitySet="ThanhLyHopDongs">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="SoThanhLyHopDong" ColumnName="SoThanhLyHopDong" />
-                <ScalarProperty Name="NgayKy" ColumnName="NgayKy" />
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-                <ScalarProperty Name="NguoiKy" ColumnName="NguoiKy" />
                 <ScalarProperty Name="HopDongId" ColumnName="HopDongId" />
+                <ScalarProperty Name="NguoiKy" ColumnName="NguoiKy" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="NgayKy" ColumnName="NgayKy" />
+                <ScalarProperty Name="SoThanhLyHopDong" ColumnName="SoThanhLyHopDong" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ThanhToanHoaDons">
             <EntityTypeMapping TypeName="AvnDataModel.ThanhToanHoaDon">
               <MappingFragment StoreEntitySet="ThanhToanHoaDons">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="NguoiGhiSo" ColumnName="NguoiGhiSo" />
-                <ScalarProperty Name="ThoiGianGhiSo" ColumnName="ThoiGianGhiSo" />
-                <ScalarProperty Name="SoTienThanhToan" ColumnName="SoTienThanhToan" />
-                <ScalarProperty Name="HoaDonId" ColumnName="HoaDonId" />
                 <ScalarProperty Name="DuAnId" ColumnName="DuAnId" />
+                <ScalarProperty Name="HoaDonId" ColumnName="HoaDonId" />
+                <ScalarProperty Name="SoTienThanhToan" ColumnName="SoTienThanhToan" />
+                <ScalarProperty Name="ThoiGianGhiSo" ColumnName="ThoiGianGhiSo" />
+                <ScalarProperty Name="NguoiGhiSo" ColumnName="NguoiGhiSo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
         </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -2428,7 +2430,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

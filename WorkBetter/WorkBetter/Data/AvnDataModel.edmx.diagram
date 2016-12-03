@@ -4,72 +4,72 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="86bf80cdbd8a4761bba1d5c73e5e4e74" Name="Diagram1" ZoomLevel="96">
-        <EntityTypeShape EntityType="AvnDataModel.ChiPhiDuAn" Width="1.5" PointX="6" PointY="25.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.DanhMucDuAn" Width="1.5" PointX="8.25" PointY="22.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.DanhMucHopDong" Width="1.5" PointX="3" PointY="26" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.DuAn" Width="1.5" PointX="10.5" PointY="25.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.HoaDon" Width="1.5" PointX="15.75" PointY="26" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.HopDong" Width="1.5" PointX="8.25" PointY="25.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.KhachHang" Width="1.5" PointX="5.25" PointY="30.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.LienHeKhachHang" Width="1.5" PointX="10.5" PointY="30.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.LienKetList" Width="1.5" PointX="12.75" PointY="30.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.LienKet" Width="1.5" PointX="18" PointY="30.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.MocThoiGian" Width="1.5" PointX="15.75" PointY="20.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.NhanVien" Width="1.5" PointX="0.75" PointY="24.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.NhanXet" Width="1.5" PointX="3" PointY="34.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.NhomKhachHang" Width="1.5" PointX="3" PointY="37" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.PhuLucHopDong" Width="1.5" PointX="13.5" PointY="26.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.Reminder" Width="1.5" PointX="15.75" PointY="30.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.RuiRo" Width="1.5" PointX="18.75" PointY="26" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.SoGhiChepList" Width="1.5" PointX="3" PointY="40" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.SoGhiChep" Width="1.5" PointX="8.25" PointY="32" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.TaskList" Width="1.5" PointX="18.75" PointY="21" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.Task" Width="1.5" PointX="21" PointY="24" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.ThanhLyHopDong" Width="1.5" PointX="13.5" PointY="22.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AvnDataModel.ThanhToanHoaDon" Width="1.5" PointX="21" PointY="29.25" IsExpanded="true" />
-        <AssociationConnector Association="AvnDataModel.FK_ChiPhiDuAnDuAn" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_ChiPhiDuAnNhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_DuAnDanhMucDuAn" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_DanhMucHopDongNhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_HopDongDanhMucHopDong" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_DuAnNhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_HopDongDuAn" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_LienKetListDuAn" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_MocThoiGianDuAn" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_ReminderDuAn" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_RuiRoDuAn" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_TaskList_DuAn" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_ThanhToanDuAn" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_ThanhToanHoaDonDuAn" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_HoaDonNhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_ThanhToanHoaDonHoaDon" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_HopDong_KhachHang" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_HopDongThanhLyHopDong" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_NguoiKyHopDong" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_PhuLucHopDong_HopDong" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_KhachHangNhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_LienHeKhachHangKhachHang" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_NhomKhachHang_KhachHang" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_LienHeKhachHangNhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_LienKetLienKetList" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_LienKetListNhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_LienKetNhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_MocThoiGian_NguoiChiuTrachNhiem" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_MocThoiGian_NhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_NhanXetNhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_NhomKhachHangNhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_PhuLucHopDong_NhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_ReminderNhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_RuiRoNhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_SoGhiChepListNhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_SoGhiChepNhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_Task_NhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_TaskList_NhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_ThanhLyHopDong_NhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_ThanhToanHoaDonNhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_SoGhiChepSoGhiChepList" ManuallyRouted="false" />
-        <AssociationConnector Association="AvnDataModel.FK_Task_TaskList" ManuallyRouted="false" />
+      <Diagram DiagramId="86bf80cdbd8a4761bba1d5c73e5e4e74" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="AvnDataModel.ChiPhiDuAn" Width="1.5" PointX="3" PointY="28.875" />
+        <EntityTypeShape EntityType="AvnDataModel.DanhMucDuAn" Width="1.5" PointX="7.5" PointY="33.125" />
+        <EntityTypeShape EntityType="AvnDataModel.DanhMucHopDong" Width="1.5" PointX="3" PointY="33.5" />
+        <EntityTypeShape EntityType="AvnDataModel.DuAn" Width="1.5" PointX="9.75" PointY="30.625" />
+        <EntityTypeShape EntityType="AvnDataModel.HoaDon" Width="1.5" PointX="12" PointY="34" />
+        <EntityTypeShape EntityType="AvnDataModel.HopDong" Width="1.5" PointX="7.5" PointY="28.125" />
+        <EntityTypeShape EntityType="AvnDataModel.KhachHang" Width="1.5" PointX="5.25" PointY="25.75" />
+        <EntityTypeShape EntityType="AvnDataModel.LienHeKhachHang" Width="1.5" PointX="7.5" PointY="24.125" />
+        <EntityTypeShape EntityType="AvnDataModel.LienKetList" Width="1.5" PointX="15" PointY="24.375" />
+        <EntityTypeShape EntityType="AvnDataModel.LienKet" Width="1.5" PointX="17.25" PointY="26.25" />
+        <EntityTypeShape EntityType="AvnDataModel.MocThoiGian" Width="1.5" PointX="12" PointY="22" />
+        <EntityTypeShape EntityType="AvnDataModel.NhanVien" Width="1.5" PointX="0.75" PointY="24" />
+        <EntityTypeShape EntityType="AvnDataModel.NhanXet" Width="1.5" PointX="3" PointY="37" />
+        <EntityTypeShape EntityType="AvnDataModel.NhomKhachHang" Width="1.5" PointX="3" PointY="26" />
+        <EntityTypeShape EntityType="AvnDataModel.PhuLucHopDong" Width="1.5" PointX="12.75" PointY="26.625" />
+        <EntityTypeShape EntityType="AvnDataModel.Reminder" Width="1.5" PointX="12" PointY="30.375" />
+        <EntityTypeShape EntityType="AvnDataModel.RuiRo" Width="1.5" PointX="15" PointY="28" />
+        <EntityTypeShape EntityType="AvnDataModel.SoGhiChepList" Width="1.5" PointX="3" PointY="40" />
+        <EntityTypeShape EntityType="AvnDataModel.SoGhiChep" Width="1.5" PointX="5.25" PointY="31.875" />
+        <EntityTypeShape EntityType="AvnDataModel.TaskList" Width="1.5" PointX="15" PointY="33" />
+        <EntityTypeShape EntityType="AvnDataModel.Task" Width="1.5" PointX="17.25" PointY="30.125" />
+        <EntityTypeShape EntityType="AvnDataModel.ThanhLyHopDong" Width="1.5" PointX="9.75" PointY="26.625" />
+        <EntityTypeShape EntityType="AvnDataModel.ThanhToanHoaDon" Width="1.5" PointX="17.25" PointY="35.25" />
+        <AssociationConnector Association="AvnDataModel.FK_ChiPhiDuAnDuAn" />
+        <AssociationConnector Association="AvnDataModel.FK_ChiPhiDuAnNhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_DuAnDanhMucDuAn" />
+        <AssociationConnector Association="AvnDataModel.FK_DanhMucHopDongNhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_HopDongDanhMucHopDong" />
+        <AssociationConnector Association="AvnDataModel.FK_DuAnNhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_HopDongDuAn" />
+        <AssociationConnector Association="AvnDataModel.FK_LienKetListDuAn" />
+        <AssociationConnector Association="AvnDataModel.FK_MocThoiGianDuAn" />
+        <AssociationConnector Association="AvnDataModel.FK_ReminderDuAn" />
+        <AssociationConnector Association="AvnDataModel.FK_RuiRoDuAn" />
+        <AssociationConnector Association="AvnDataModel.FK_TaskList_DuAn" />
+        <AssociationConnector Association="AvnDataModel.FK_ThanhToanDuAn" />
+        <AssociationConnector Association="AvnDataModel.FK_ThanhToanHoaDonDuAn" />
+        <AssociationConnector Association="AvnDataModel.FK_HoaDonNhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_ThanhToanHoaDonHoaDon" />
+        <AssociationConnector Association="AvnDataModel.FK_HopDong_KhachHang" />
+        <AssociationConnector Association="AvnDataModel.FK_HopDongThanhLyHopDong" />
+        <AssociationConnector Association="AvnDataModel.FK_NguoiKyHopDong" />
+        <AssociationConnector Association="AvnDataModel.FK_PhuLucHopDong_HopDong" />
+        <AssociationConnector Association="AvnDataModel.FK_KhachHangNhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_LienHeKhachHangKhachHang" />
+        <AssociationConnector Association="AvnDataModel.FK_NhomKhachHang_KhachHang" />
+        <AssociationConnector Association="AvnDataModel.FK_LienHeKhachHangNhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_LienKetLienKetList" />
+        <AssociationConnector Association="AvnDataModel.FK_LienKetListNhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_LienKetNhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_MocThoiGian_NguoiChiuTrachNhiem" />
+        <AssociationConnector Association="AvnDataModel.FK_MocThoiGian_NhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_NhanXetNhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_NhomKhachHangNhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_PhuLucHopDong_NhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_ReminderNhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_RuiRoNhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_SoGhiChepListNhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_SoGhiChepNhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_Task_NhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_TaskList_NhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_ThanhLyHopDong_NhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_ThanhToanHoaDonNhanVien" />
+        <AssociationConnector Association="AvnDataModel.FK_SoGhiChepSoGhiChepList" />
+        <AssociationConnector Association="AvnDataModel.FK_Task_TaskList" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

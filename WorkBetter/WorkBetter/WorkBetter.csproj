@@ -91,6 +91,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CommonFunctions\Converters.cs" />
+    <Compile Include="CommonFunctions\Generator.cs" />
+    <Compile Include="CommonFunctions\MrPostMan.cs" />
     <Compile Include="Staff\NhanVienCard.xaml.cs">
       <DependentUpon>NhanVienCard.xaml</DependentUpon>
     </Compile>
@@ -266,6 +268,7 @@
       <LastGenOutput>AvnDataModel.Context.cs</LastGenOutput>
       <DependentUpon>AvnDataModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Data\AvnDataModel.edmx.sql" />
     <Content Include="Data\AvnDataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>AvnDataModel.edmx</DependentUpon>
